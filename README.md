@@ -15,7 +15,7 @@
 
 ## INTEGRANTES: 
 Sebastian Arias: Tengo 25 años. Soy un fanatico de la lectura, la tecnologia y videojuegos. Tengo amor/odio por el lol. 
-Juan David Calle Ramirez
+Juan David Calle Ramirez:
 
 
 
@@ -28,3 +28,7 @@ https://www.flightclub.com
 https://www.off---white.com 
 
 https://www.stadiumgoods.com
+
+https://www.goat.com
+
+https://www.ripndipclothing.com
