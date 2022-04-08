@@ -24,7 +24,5 @@ Juan David Calle Ramirez
 
 ## LINKS DE REFERENCIA:
 https://www.flightclub.com
-
 https://www.off---white.com
-
 https://www.stadiumgoods.com
