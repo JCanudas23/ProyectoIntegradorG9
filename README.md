@@ -12,14 +12,13 @@
 
 
 
-
 ## INTEGRANTES: 
 Sebastian Arias: Tengo 25 años. Soy un fanatico de la lectura, la tecnologia y videojuegos. Tengo amor/odio por el lol. 
 Juan David Calle Ramirez:
 
 
 
-
+Luciano Rivas Jordan: Tengo 27 años. Soy apasionado del manga, deportes y computación.
 
 
 ## LINKS DE REFERENCIA:
