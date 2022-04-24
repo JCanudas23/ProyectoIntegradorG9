@@ -14,12 +14,12 @@
 
 ## INTEGRANTES: 
 Sebastian Arias: Tengo 25 años. Soy un fanatico de la lectura, la tecnologia y videojuegos. Tengo amor/odio por el lol. 
+
 Juan David Calle Ramirez:
-
-
 
 Luciano Rivas Jordan: Tengo 27 años. Soy apasionado del manga, deportes y computación.
 
+Alejandro Herrera. Tengo 50 años. Fanático de la Fórmula 1, el mundo de la tecnología, la innovación el emprendedodirsmo. Me debía la programación y acá estamos.
 
 ## LINKS DE REFERENCIA:
 https://www.flightclub.com
