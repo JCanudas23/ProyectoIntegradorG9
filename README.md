@@ -1,5 +1,5 @@
 ## DESCRIPCION: 
-
+Somos Lacez Society, una tienda multimarca exclusiva de zapatillas Sneakers.
 
 
 
