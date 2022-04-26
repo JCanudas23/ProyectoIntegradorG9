@@ -7,6 +7,7 @@ Somos Lacez Society, una pagina web dedicada a la venta exclusiva de Sneakers.
 
 
 ## PUBLICO OBJETIVO:
+En Lacez perseguimos la última tendencia, lo mejor, aquello que todos quieren, sin olvidarnos también de los de siempre: "los clásicos". Así es que en nuestra tienda podrán encontrar calzado de varios estilos, marcas y precios.
 
 
 
