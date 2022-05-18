@@ -12,6 +12,16 @@ app.get('/', function (req, res) {
     res.sendFile(indexHtml);
 });
 
+app.get('/productDetail', function (req, res) {
+    let indexHtml = path.resolve(__dirname, "./views/productDetail.html");
+    res.sendFile(indexHtml);
+});
+
+app.get('/productCart', function (req, res) {
+    let indexHtml = path.resolve(__dirname, "./views/productCart.html");
+    res.sendFile(indexHtml);
+});
+
 app.get('/register', function (req, res) {
     let indexHtml = path.resolve(__dirname, "./views/register.html");
     res.sendFile(indexHtml);
@@ -19,15 +29,5 @@ app.get('/register', function (req, res) {
 
 app.get('/login', function (req, res) {
     let indexHtml = path.resolve(__dirname, "./views/login.html");
-    res.sendFile(indexHtml);
-});
-
-app.get('/login', function (req, res) {
-    let indexHtml = path.resolve(__dirname, "./views/productCart.html");
-    res.sendFile(indexHtml);
-});
-
-app.get('/login', function (req, res) {
-    let indexHtml = path.resolve(__dirname, "./views/productDetail.html");
     res.sendFile(indexHtml);
 });
