@@ -1,0 +1,23 @@
+{
+  "name": "proyectointegradorg9",
+  "version": "1.0.0",
+  "description": "Somos Lacez Society, una pagina web dedicada a la venta exclusiva de Sneakers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCanudas23/ProyectoIntegradorG9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JCanudas23/ProyectoIntegradorG9/issues"
+  },
+  "homepage": "https://github.com/JCanudas23/ProyectoIntegradorG9#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}

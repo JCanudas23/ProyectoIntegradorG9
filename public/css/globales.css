@@ -1,0 +1,32 @@
+:root {
+    --amarillo:#FFD600;
+    --gris-oscuro:#404040;
+    --gris-claro:#797979;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Lato', sans-serif;;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+img {
+   width: 100%;
+}

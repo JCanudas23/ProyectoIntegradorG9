@@ -1,0 +1,23 @@
+.header {
+    margin: 20px auto 0px;
+    padding: 0px 0px 20px;
+    box-shadow: 1px 1px 1px #cecece;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-nav {
+    width: 30%;
+}
+
+.nav-icons {
+    padding: 6px 10px;
+    background-color: white;
+    color: var(--gris-oscuro);
+    box-shadow: 1px 1px 1px #cecece;
+    border-radius: 3px;
+}
