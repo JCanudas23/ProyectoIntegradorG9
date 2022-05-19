@@ -1,0 +1,152 @@
+:root {
+    --amarillo:#FFD600;
+    --gris-oscuro:#404040;
+    --gris-claro:#797979;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Lato', sans-serif;
+}
+
+.header {
+    margin: 20px auto 0px;
+    padding: 0px 0px 20px;
+    box-shadow: 1px 1px 1px #cecece;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-nav {
+    width: 30%;
+}
+
+.nav-icons {
+    padding: 6px 10px;
+    background-color: white;
+    color: var(--gris-oscuro);
+    box-shadow: 1px 1px 1px #cecece;
+    border-radius: 3px;
+}
+
+.main-container {
+    margin-top: 20px;
+}
+
+.new-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto 10px;
+}
+
+.new-nav h3 {
+    font-weight: 400;
+}
+
+.see-all__button {
+    font-weight: 300;
+    background-color: white;
+    border: none;
+    color: var(--gris-claro);
+}
+
+
+.contenedor {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+img {
+   width: 100%;
+}
+
+
+
+   /*                   FORMULARIO INICIO SESION                   */
+
+.form-inicio{
+    margin: auto;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio-login{
+    width: 100%;
+}
+
+
+form div{
+    width: 100%;
+}
+
+form button{
+    margin: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #FFD600;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    transition: all 350ms;
+    /* width: 100%; */
+}
+
+
+form input{
+    margin: 8px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+ border-radius: 5px;
+ padding: 10px;
+ margin-top: 10px;
+ transition: all 350ms;
+}
+
+.saludo-login{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10px;
+    padding: 8px;
+}
+
+.hola-login{
+    font-size: 60px;
+    font-family:'Lato', sans-serif;
+    font-weight: bold ;
+    color: #404040;
+    
+}
+
+.punto-amarillo{
+    font-size: 60px;
+    font-family:'Lato', sans-serif;
+    color: #FFD600;
+    margin-left: 4px;
+}
+
+.espacio-login{
+    width: 50%;
+    
+}
+

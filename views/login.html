@@ -5,58 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lacez</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aa2d04da58.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <header>
+    <body>
+        <header class="header">
+                <div class="contenedor header-container">
+                    <div class="burger-menu nav-icons">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <img class="logo-nav" src="/img/logo-gris.png" alt="img-Logo">
+                    <div class="product-cart nav-icons">
+                        <i class="fa-regular fa-cart-shopping"></i>
+                    </div>
+                </div>
+        </header>
+            <section class="bannerppal">
+                <img src="/img/hero.png" alt="img-banner-ppal">
+            </section>
 
-    </header>
 
-    <main>
-        <div>
-            <h2>Hola</h2>
-            <h2>.</h2>
-        </div>
-        <div>
-            <p>Iniciar sesion</p>
-            <p>/</p>
-            <p>Eres Nuevo?</p>
-        </div>
-        <form action="" method="">
-            <ul>
-                <li>
-                    <label for="mail"></label>
-                    <input type="email" id="mail" name="user_mail" placeholder="*E-mail">
-                </li>
-                <li>
-                    <label for="password"></label>
-                    <input type="password" id="password" name="password" placeholder="*Contrasena">
-            </ul>
-        </form>
-        <div>
-            <p>Recuperar Contrasenia</p>
-        </div>
-        <div>
-            <li class="button">
-                <button type="submit">Iniciar sesion</button>
-            </li>
-        </div>
-        <div>
-            <li class="button">
-                <button type="submit">Regresar</button>
-            </li>
-        </div>
-    </main>
 
-    <footer>
 
-    </footer>
-</body>
+
+
+
+        <main class="inicio-main">
+                <div class="saludo-login"> 
+                <h4 class="hola-login">Hola</h4><h4 class="punto-amarillo">.</h4>
+                </div>  
+
+                <div>
+                <P>Iniciar sesión</P><p>/</p><p>¿Eres nuevo?</p>
+                </div> 
+                
+                <div>
+                    <form action="/" method="get" class="form-inicio">
+                        <div class="inicio-login">
+                            <div>
+                            <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" required class="espacio-login">
+                            </div>
+                            <div>
+                                <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-login">
+                            </div>
+                            <div>
+                                <button type="submit" name="confirmar" id="confirmar" class="espacio-login">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>    
+        </main>
+        <footer>
+        </footer>
+    </body>
 </html>
 
 
