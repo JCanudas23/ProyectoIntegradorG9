@@ -1,0 +1,57 @@
+.imagen{
+    width: 100%;
+    height: 100%;
+}
+.producto{
+    margin: 0px auto 25px auto;
+    width: 80%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.borde-azul{
+    border: solid 2px blue;
+}
+
+.centrar{
+    margin: 0px auto;
+}
+
+.flex-lineal {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }*/
+
+  .info-total{
+      width: 50%;
+      height: 20%;
+      background-color: #404040;
+  }
+
+  .list-info-total{
+      padding: 25px 0px 25px 25px;
+  }
+
+  .total-carro{
+      color: #FFD600;
+  }
+
+  .precio-carro, .envio-carro{
+      color: #797979 ;
+  }
+  
+  .fin-compra{
+      background-color: #FFD600;
+      font-size: bold;
+      width: 50%;
+  }
+
+  .fin-compra a{
+      padding: 45px;
+  }
