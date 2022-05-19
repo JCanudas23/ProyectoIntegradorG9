@@ -28,38 +28,61 @@
                 <img src="/img/hero.png" alt="img-banner-ppal">
             </section>
 
-
-
-
-
-
-
-        <main class="inicio-main">
-                <div class="saludo-login"> 
-                <h4 class="hola-login">Hola</h4><h4 class="punto-amarillo">.</h4>
+        <main>
+               <div class="saludo-login"> 
+                    <h4 class="hola-login">Hola</h4><h4 class="punto-amarillo">.</h4>
                 </div>  
 
-                <div>
-                <P>Iniciar sesión</P><p>/</p><p>¿Eres nuevo?</p>
+                <div class="login-option">
+                    <a href="#" class="inicio-sesion"><P>Iniciar sesión</P></a><p>/</p><a href="#" class="muembro-nuevo"><p>¿Eres nuevo?</p></a>
                 </div> 
-                
-                <div>
-                    <form action="/" method="get" class="form-inicio">
-                        <div class="inicio-login">
-                            <div>
-                            <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuario" required class="espacio-login">
-                            </div>
-                            <div>
-                                <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-login">
-                            </div>
-                            <div>
-                                <button type="submit" name="confirmar" id="confirmar" class="espacio-login">Enviar</button>
-                            </div>
+  
+                <form action="/" method="get" class="form-inicio">
+                    <div>
+                        <div>
+                            <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="E-mail" required class="espacio-login">
                         </div>
-                    </form>
-                </div>    
+                        <div>
+                            <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-login">
+                        </div>
+                        <div>
+                            <a href="#" class="menu">Recuperar Contraseña</a>
+                        </div>
+                        <div>
+                            <button type="submit" name="confirmar" id="confirmar" class="espacio-login">Iniciar Sesion</button>
+                        </div>
+                        <div>
+                            <button type="reset" name="eliminar" id="eliminar">Regresar</button>
+                        </div>
+                    </div>
+                </form>    
         </main>
         <footer>
+                <div class="footer-flex">
+                    <div>
+                        <div>
+                            <h2 class="pie">Instagram</h2>                          
+                        </div>
+
+                        <div>
+                             <h2 class="pie">Facebook</h2>
+                        </div>
+
+                        <div>
+                            <h2 class="pie">Youtube</h2>                    
+                        </div>
+                    </div>
+
+                    <div><!-- class="politicas-compania" -->
+                        <p>Política de privacidad</p>
+                        <p>Condición de compra</p>
+                    </div>
+                </div> 
+
+                <div>
+                    <h4 class="copyright">© 2022 Lacez Society. Todos los derechos reservados</h4>
+                </div>
+                            
         </footer>
     </body>
 </html>

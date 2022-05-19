@@ -74,16 +74,16 @@ img {
 
    /*                   FORMULARIO INICIO SESION                   */
 
-.form-inicio{
+/* .inicio-login{
     margin: auto;
     width: 80%;
     margin-top: 30px;
     margin-bottom: 30px;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.espacio-login{
+/* .espacio-login{
     width: 100%;
 }
 
@@ -103,21 +103,20 @@ form button{
     border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
-    transition: all 350ms;
-    /* width: 100%; */
 }
 
 
 form input{
     margin: 8px;
- display: flex;
- flex-wrap: wrap;
- justify-content: center;
- align-items: center;
- border-radius: 5px;
- padding: 10px;
- margin-top: 10px;
- transition: all 350ms;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    transition: all 350ms;
 }
 
 .saludo-login{
@@ -150,3 +149,133 @@ form input{
     
 }
 
+*/
+
+
+
+.saludo-login{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 8px;
+    padding: 8px;
+    font-size: 60px;
+    font-family:'Lato', sans-serif;
+    font-weight: bolder ;
+    margin-bottom: 15px;
+ }
+ 
+ .punto-amarillo{
+    color: #FFD600;
+    margin-left: 4px;
+ }
+
+ .hola-login{
+     color: #404040;
+ }
+ 
+ .login-option{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    font-size: 18px;
+    font-family:'Lato', sans-serif;
+
+ }
+ 
+ .login-option p{
+    font-family:'Lato', sans-serif;
+    color: #404040;
+    padding: 4px;
+    font-weight: bold;
+ }
+
+.form-inicio{
+    font-size: 18px;
+    font-family:'Lato', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-content: space-around;
+    width: 100%;
+ }
+
+.form-inicio div{
+    padding: 5px;
+    margin: 4px;
+}
+
+.form-inicio input{
+    margin: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: #404040;
+    background-color: #cecece;
+    border-style: none;
+
+}
+
+.form-inicio button{
+    margin: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: #FFD600;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-style: none;
+}
+
+.form-inicio a{
+    color: #404040;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 24px; 
+    margin-top: 50px;
+    margin-bottom: 20px; 
+    justify-content: space-around; 
+}
+
+footer h2{
+    flex-direction: row;
+}
+.footer-flex {  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie{
+    
+    justify-content: center;
+    font-family: "Reboto";
+    font-size: 14px;
+    text-align: center;
+    color:#666;  
+}
+
+.copyright{
+    font-family:'Lato', sans-serif;
+    font-size: 14px;
+    margin: 20px;
+    opacity: 0.50;
+    margin-top: 52px;
+}
