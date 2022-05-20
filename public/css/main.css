@@ -46,6 +46,16 @@
     width: 48%;
 }
 
+.product1{
+    width: 90%;
+}
+
+.boton-enviar{
+    padding: 1%;
+    background-color:#FFD600;
+    color: #404040;
+}
+
 .product-description {
     margin: 10px 0px;
 }

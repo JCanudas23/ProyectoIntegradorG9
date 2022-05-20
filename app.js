@@ -17,6 +17,11 @@ app.get('/productDetail', function (req, res) {
     res.sendFile(indexHtml);
 });
 
+app.get('/productDetail2', function (req, res) {
+    let indexHtml = path.resolve(__dirname, "./views/productDetail2.html");
+    res.sendFile(indexHtml);
+});
+
 app.get('/productCart', function (req, res) {
     let indexHtml = path.resolve(__dirname, "./views/productCart.html");
     res.sendFile(indexHtml);

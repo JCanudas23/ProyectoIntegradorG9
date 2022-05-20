@@ -53,10 +53,16 @@
   }
 
   .fin-compra a{
-      padding: 45px;
+      padding: 30px;
   }
 
   .precio-prod{
       background-color: #FFD600;
       width: 40px;
   }
+
+  .bolsa{
+    padding: 25px 0px 10px 115px;
+  }
+
+  
