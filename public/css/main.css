@@ -42,12 +42,13 @@
     font-weight: 700;
 }
 
-.product {
-    width: 48%;
+.product-desktop {
+    display: none;
 }
 
-.product1{
-    width: 90%;
+.product {
+    display: block;
+    width: 100%;
 }
 
 .boton-enviar{
@@ -71,4 +72,24 @@
     color: var(--gris-oscuro);
     font-size: 16px;
 }
+
+@media (min-width: 381px) {
+    .product {
+        width: 48%;
+    }  
+}
+
+@media (min-width: 900px) {
+
+    .product {
+        display: block;
+        width: 23%;
+    }
+
+    .product-desktop {
+        display:block;
+    }
+}
+
+
 

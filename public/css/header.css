@@ -21,3 +21,15 @@
     box-shadow: 1px 1px 1px #cecece;
     border-radius: 3px;
 }
+
+.fa-basket-shopping {
+    color: var(--gris-oscuro);
+}
+
+
+@media (min-width: 381px) {
+    .logo-nav {
+        width: 15%;
+    }
+}
+   
