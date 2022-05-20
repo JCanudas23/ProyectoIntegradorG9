@@ -1,0 +1,63 @@
+
+.registro{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+    font-family:'Lato', sans-serif;
+    width: 100%;
+}
+
+.registro input{
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;        
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.registro button{
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: #FFD600;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    border-style: none;
+}
+
+.registro label{
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+.espacio-reg{
+    width: 100%;
+    margin: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: #404040;
+    background-color: #cecece;
+    border-style: none;
+}
+

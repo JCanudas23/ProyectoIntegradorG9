@@ -26,46 +26,45 @@
             </div>
         </div>
     </header>
+    <section class="bannerppal">
+        <img src="/img/hero.png" alt="img-banner-ppal">
+    </section>
     <main>
-        <div>
-            <div class="saludo-login"> 
-                <h4 class="hola-login">Hola</h4><h4 class="punto-amarillo">.</h4>
-            </div>  
-        </div>
-        <div class="centrar">
-            <p>Iniciar sesion</p>
-            <p>/</p>
-            <p>Eres Nuevo?</p>
-        </div>
-        <form action="" method="">
-            <ul>
-                <li>
-                    <div class="form-inicio">
-                    <label for="nombre"></label>
-                    <input type="nombre" id="nombre" name="nombre" placeholder="*Nombre">
-                    </div>
-                </li>
-                <div class="form-inicio">
-                    <label for="mail"></label>
-                    <input type="email" id="mail" name="user_mail" placeholder="*E-mail">
+        <div class="saludo-login"> 
+            <h4 class="hola-login">Hola</h4><h4 class="punto-amarillo">.</h4>
+        </div>  
+
+        <div class="login-option">
+            <a href="/login" class="inicio-sesion"><P>Iniciar sesión</P></a><p>/</p><a href="/register" class="muembro-nuevo"><p>¿Eres nuevo?</p>
+        </div> 
+        <form action="/" method="get">
+            <div class="registro">
+                <div>   
+                    <!-- <label for="nombreApellido">Nombre y Apellido</label> -->
+                    <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" required class="espacio-reg"> 
+                </div> 
+                <div>
+                    <!-- <label for="nombreUsuario">Nombre de Usuari@</label> -->
+                    <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuari@" required class="espacio-reg">
                 </div>
-                <li>
-                    <div class="form-inicio">
-                    <label for="password"></label>
-                    <input type="password" id="password" name="password" placeholder="*Contrasena">
+                <div>  <!-- span class="feedback" /span para mensajes de error --> 
+                    <input type="email" name="email" id="email" placeholder="E-mail" required class="espacio-reg">
                 </div>
-            </ul>
-        </form>
-        <div>
-            <li class="button">
-                <button type="submit">Regístrate</button>
-            </li>
-        </div>
-        <div>
-            <li class="button">
-                <button type="submit">Regresar</button>
-            </li>
-        </div>
+                <div>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-reg">
+                </div>
+                <div>
+                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar Contraseña" required class="espacio-reg">
+                </div>
+                <div>
+                    <button type="submit" name="confirmar" id="confirmar">Enviar</button>
+                </div>
+                <div>
+                    <button type="reset" name="eliminar" id="eliminar">Borrar Datos</button>
+                </div>
+            </div>    
+        </form>   
+    
     </main>
     <footer class="contenedor">
         <div class="footer-flex">
