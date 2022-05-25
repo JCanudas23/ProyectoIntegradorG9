@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head') %> 
+<body>
+
+    <%- include ('./partials/header') %>
+    <main>
+        <div class="saludo-login"> 
+            <h4 class="hola-login">Modificar Producto</h4><h4 class="punto-amarillo">.</h4>
+        </div>  
+
+        <div class="login-option">
+            <a href="/adminCreate" class="inicio-sesion"><P>Crear producto</P></a><p>/</p><a href="/adminModify" class="muembro-nuevo"><p>Modificar producto</p></a>
+        </div> 
+        <form action="/" method="get">
+            <div class="registro">
+                <div>   
+                    <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre de producto" required class="espacio-reg"> 
+                </div> 
+                <div>
+                    <input type="text" name="descripcion" id="descripcion" placeholder="descripcion" required class="espacio-reg">
+                </div>
+                <div>
+                    <input type="file" name="image" id="image" required class="espacio-reg">
+                </div>
+                <div>
+                    <input type="text" name="categoria" id="categoria" placeholder="Categoria" required class="espacio-reg">
+                </div>
+                <div>
+                    <input type="color" name="color" id="color" placeholder="Selecionar color" required class="espacio-reg">
+                </div>
+                <div>
+                    <input type="text" name="precio" id="precio" placeholder="Precio" required class="espacio-reg">
+                </div>
+                <div>
+                    <button type="submit" name="confirmar" id="confirmar">Guardar</button>
+                </div>
+                <div>
+                    <button type="reset" name="eliminar" id="eliminar">Borrar Datos</button>
+                </div>
+            </div>    
+        </form>   
+    
+    </main>
+
+    <%- include ('./partials/footer') %>
+</body>
+</html>

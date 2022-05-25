@@ -26,10 +26,14 @@
     color: var(--gris-oscuro);
 }
 
+.link-logo {
+    text-align: center;
+}
+
 
 @media (min-width: 381px) {
     .logo-nav {
-        width: 15%;
+        width: 30%;
     }
 }
    

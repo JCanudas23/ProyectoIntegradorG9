@@ -3,3 +3,6 @@ Nos supimos distribuir las tareas bien y logramos concluir con el sprint 2 en po
 
 Puntos en contra:
 Manejamos mal los tiempos de trabajo, ya que estabamos con Mercado Liebre. Dejamos todo para ultima instacia. Nos costo mucho organizar reuniones en Zoom a horarios funcionales para todos, haciendo que trabajemos hasta altas horas de la noche. Todos puntos a mejorar ya conversados para asumir las responsabilidades y evitar repetir los errores en el proximo sprint.
+
+
+Sprint 2:
