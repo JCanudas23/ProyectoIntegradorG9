@@ -1,40 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lacez</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/aa2d04da58.js" crossorigin="anonymous"></script>
-</head> -->
 <%- include ('./partials/head') %> 
     <body>
-<!--         <header class="header">
-                <div class="contenedor header-container">
-                    <div class="burger-menu nav-icons">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <img class="logo-nav" src="/img/logo-gris.png" alt="img-Logo">
-                    <div class="product-cart nav-icons">
-                        <a href="/productCart"><i class="fa-solid fa-basket-shopping fad"></i></a>
-                    </div>
-                </div>
-        </header> -->
         <%- include ('./partials/header') %>
-            <section class="bannerppal">
-                <img src="/img/hero.png" alt="img-banner-ppal">
-            </section>
-        <main>
-               <div class="saludo-login"> 
-                    <h4 class="hola-login">Hola</h4><h4 class="punto-amarillo">.</h4>
-                </div>  
+    <section class="bannerppal">
+        <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
+        <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
+    </section>
+        <main class="contenedor">
+            <div class="saludo-login"> 
+                <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
+            </div> 
 
                 <div class="login-option">
-                    <a href="#" class="inicio-sesion"><P>Iniciar sesión</P></a><p>/</p><a href="/register" class="muembro-nuevo"><p>¿Eres nuevo?</p></a>
+                    <a href="/login" class="inicio-sesion"><P>Iniciar sesión</P></a>
+                    <p>/</p>
+                    <a href="/register"><p class="miembro-nuevo-login">¿Eres nuevo?</p></a>
                 </div> 
                 <form action="/" method="get" class="form-inicio">
                     <div>
@@ -47,38 +28,18 @@
                         <div>
                             <a href="#" class="menu">Recuperar Contraseña</a>
                         </div>
-                        <div>
-                            <button type="submit" name="confirmar" id="confirmar" class="espacio-login">Iniciar Sesion</button>
+                        <div class="button-login" >
+                            <div>
+                                <button type="submit" name="confirmar" id="confirmar" class="espacio-login">Iniciar Sesion</button>
+                            </div>
+                            <div>
+                                <button type="reset" name="eliminar" id="eliminar">Regresar</button>
+                            </div>
                         </div>
-                        <div>
-                            <button type="reset" name="eliminar" id="eliminar">Regresar</button>
-                        </div>
+                        
                     </div>
                 </form>    
         </main>
-<!--         <footer class="contenedor">
-            <div class="footer-flex">
-                <div class="redes">
-                    <div>
-                        <h2 class="pie">Instagram</h2>                          
-                    </div>
-                    <div>
-                        <h2 class="pie">Facebook</h2>
-                    </div>
-                    <div>
-                        <h2 class="pie">Youtube</h2>                    
-                    </div>
-                </div>
-                <div class="politics">
-                    <p>Política de privacidad</p>
-                    <p>Condición de compra</p>
-                </div>
-            </div> 
-    
-            <div>
-                <h4 class="copyright"><span>©2022 Lacez Society.</span> Todos los derechos reservados</h4>
-            </div>                           
-        </footer> -->
         <%- include ('./partials/footer') %>
     </body>
 </html>

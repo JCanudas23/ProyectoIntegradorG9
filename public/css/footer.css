@@ -1,8 +1,15 @@
-footer {
+.footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
+}
+
+.line {
+    background-color: var(--gris-claro);
+    width: 80%;
+    height: 1px;
 }
 
 .pie {
@@ -12,7 +19,7 @@ footer {
 }
 
 .footer-flex { 
-    margin: 40px auto; 
+    margin: 20px auto; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -32,7 +39,12 @@ footer {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    margin: 20px auto;
+    margin-top: 20px;
+}
+
+.politics-line {
+    background-color: var(--gris-claro);
+    width: 1px;
 }
 
 .politics p {

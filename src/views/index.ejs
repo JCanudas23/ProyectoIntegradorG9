@@ -26,97 +26,114 @@
     </header> -->
     <%- include ('./partials/header') %>
     <section class="bannerppal">
-        <img src="/img/hero.png" alt="img-banner-ppal">
+        <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
+        <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
     </section>
     <main class="contenedor">
         <section class="main-container">
             <div class="new-nav">
-                <h3>Nuevas entradas</h3></a></li>
+                <a href="#"><h3>Nuevas entradas</h3></a></li>
                 <button class="see-all__button">Ver todos</button>
             </div>
             <div class="contenedor-productos">
 
-                <div class="product"> 
+                <article class="product"> 
                     <a href="productDetail">                
                     <div class="product-img">   
-                        <img src="/img/image2.jpg" alt="product-image">
-                        <p class="precio">$ 860</p>
+                        <img src="/img/jordan-1-coconut.png" alt="product-image">
+                        <p class="precio"><span class="currency-symbol">$</span> 575</p>
                     </div>
                     <div class="product-description ">
-                        <p class="product-model"> Air Jordan<br> Mid SE</p>
-                        <h4>High OG <br> Sneaker</h4>
+                        <p class="product-model">Jordan 1 Mid SE</p>
+                        <h4>Coconut Milk<br>Particle Grey</h4>
                     </div>
                     </a> 
-                </div>
+                </article>
 
-                <div class="product">
-                    <a href="productDetail2">   
+                <article class="product">
+                    <a href="#">   
                     <div class="product-img">
-                        <img src="/img/image.png" alt="product-image">
-                        <p class="precio">$ 560</p>
+                        <img src="/img/dunk-fossil-rose.png" alt="product-image">
+                        <p class="precio"><span class="currency-symbol">$</span> 110</p>
                     </div>
                     <div class="product-description ">
-                        <p class="product-model">Jordan 1 <br> Mid SE</p>
-                        <h4>Coconut Milk <br> Particle Grey</h4>
+                        <p class="product-model">Dunk Low</p>
+                        <h4>Fossil Rose</h4>
                     </a>
-                </div>
-
+                </article>
+                <article class="product product-desktop">
+                    <div class="product-img">
+                        <img src="/img/airmax-off-noir.png" alt="product-image">
+                        <p class="precio"><span class="currency-symbol">$</span> 200</p>
+                    </div>
+                    <div class="product-description ">
+                        <p class="product-model">Air Max 97</p>
+                        <h4>Off Noir</h4>
+                    </div>
+                </article>
+                <article class="product product-desktop">
+                    <div class="product-img">
+                        <img src="/img/airmax-bw-marina.png" alt="product-image">
+                        <p class="precio"><span class="currency-symbol">$</span> 130</p>
+                    </div>
+                    <div class="product-description ">
+                        <p class="product-model">Air Max BW</p>
+                        <h4>Marina</h4>
+                    </div>
+                </article>
             </div>
         </section>
 
         <section class="main-container">
             <div class="new-nav">
-                <h3>Recomendados</h3>
+                <a href="#"><h3>Recomendados</h3></a>
                 <button class="see-all__button">Ver todos</button>
             </div>
             <div class="contenedor-productos">
             <article class="product">
                 <div class="product-img">
-                    <img src="/img/image.png" alt="product-image">
-                    <p class="precio">$ 560</p>
+                    <img src="/img/airmax-off-noir.png" alt="product-image">
+                    <p class="precio"><span class="currency-symbol">$</span> 200</p>
                 </div>
                 <div class="product-description ">
-                    <p class="product-model">Jordan 1 <br> Mid SE</p>
-                    <h4>Coconut Milk <br> Particle Grey</h4>
+                    <p class="product-model">Air Max 97</p>
+                    <h4>Off Noir</h4>
                 </div>
             </article>
             <article class="product">
                 <div class="product-img">
-                    <img src="/img/image.png" alt="product-image">
-                    <p class="precio">$ 560</p>
+                    <img src="/img/airmax-bw-marina.png" alt="product-image">
+                    <p class="precio"><span class="currency-symbol">$</span> 130</p>
                 </div>
                 <div class="product-description ">
-                    <p class="product-model">Jordan 1 <br> Mid SE</p>
-                    <h4>Coconut Milk <br> Particle Grey</h4>
+                    <p class="product-model">Air Max BW</p>
+                    <h4>Marina</h4>
+                </div>
+            </article>
+            <article class="product product-desktop">
+                <div class="product-img">
+                    <img src="/img/airmax-off-noir.png" alt="product-image">
+                    <p class="precio"><span class="currency-symbol">$</span> 200</p>
+                </div>
+                <div class="product-description ">
+                    <p class="product-model">Air Max 97</p>
+                    <h4>Off Noir</h4>
+                </div>
+            </article>
+            <article class="product product-desktop">
+                <div class="product-img">
+                    <img src="/img/airmax-bw-marina.png" alt="product-image">
+                    <p class="precio"><span class="currency-symbol">$</span> 130</p>
+                </div>
+                <div class="product-description ">
+                    <p class="product-model">Air Max BW</p>
+                    <h4>Marina</h4>
                 </div>
             </article>
             </div>
             </div>
         </section>
     </main>
- <!--    <footer class="contenedor">
-        <div class="footer-flex">
-            <div class="redes">
-                <div>
-                    <h2 class="pie">Instagram</h2>                          
-                </div>
-                <div>
-                    <h2 class="pie">Facebook</h2>
-                </div>
-                <div>
-                    <h2 class="pie">Youtube</h2>                    
-                </div>
-            </div>
-            <div class="politics">
-                <p>Política de privacidad</p>
-                <p>Condición de compra</p>
-            </div>
-        </div> 
-
-        <div>
-            <h4 class="copyright"><span>©2022 Lacez Society.</span> Todos los derechos reservados</h4>
-        </div>                           
-    </footer> -->
     <%- include ('./partials/footer') %>
 </body>
 </html>

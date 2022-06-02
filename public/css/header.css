@@ -14,26 +14,45 @@
     width: 30%;
 }
 
+.burger-menu {
+    color: var(--gris-oscuro);
+}
+
 .nav-icons {
     padding: 6px 10px;
     background-color: white;
-    color: var(--gris-oscuro);
     box-shadow: 1px 1px 1px #cecece;
     border-radius: 3px;
 }
 
-.fa-basket-shopping {
+.nav-user-shopping {
+    display: flex;
+    gap: 5px;
+}
+
+.user-icon {
+    color: var(--gris-oscuro);
+}
+
+.product-cart {
     color: var(--gris-oscuro);
 }
 
 .link-logo {
     text-align: center;
+    padding-left: 10px;
 }
 
 
 @media (min-width: 381px) {
     .logo-nav {
-        width: 30%;
+        width: 25%;
+    }
+}
+
+@media (min-width: 900px) {
+    .logo-nav {
+        width: 20%;
     }
 }
    
