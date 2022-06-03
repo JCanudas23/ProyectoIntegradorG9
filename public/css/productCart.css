@@ -1,9 +1,10 @@
 .imagen-cart{
-    width: 60%;
+    width: 100%;
+    
 }
 .producto{
     margin: 0px auto 25px auto;
-    width: 80%;
+    width: 25%;
     flex-direction: row;
     justify-content: flex-start;
 }
