@@ -4,7 +4,7 @@
   "description": "Somos Lacez Society, una pagina web dedicada a la venta exclusiva de Sneakers.",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon ./src/app.js"
+    "start": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
