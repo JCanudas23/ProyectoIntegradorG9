@@ -4,4 +4,4 @@ const indexController = {
     }
 }
 
-module.exports =indexController;
+module.exports = indexController;
