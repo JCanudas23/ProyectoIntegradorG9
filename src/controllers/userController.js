@@ -6,10 +6,6 @@ const userController = {
 
     register : (req,res) => {
         return res.render ('register');
-    },
-
-    newProduct : (req,res) => {
-        return res.render ('newProduct');
     }
 }
 

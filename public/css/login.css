@@ -52,11 +52,15 @@
     border-style: none;
 }
 
-.button-login {
+.buttons {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     text-align: center;
+}
+
+.button-login {
+    opacity: 1;
 }
 
 

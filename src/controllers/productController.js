@@ -7,7 +7,7 @@ const productController = {
 
     index: (req, res) => {
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render('listaDeProducto', {
+		res.render('products', {
 			products
 		})
     },
@@ -26,11 +26,11 @@ const productController = {
     },
 
     createProduct : (req,res) => {
-        return res.render ('product-Create');
+        return res.render ('create');
     },
     
     modifyProduct : (req,res) => {
-        return res.render ('product-Edit');
+        return res.render ('edit');
     }   
 }
 

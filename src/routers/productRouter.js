@@ -10,8 +10,8 @@ router.get('/detail/:id', productController.detail);
 
 router.get('/productCart', productController.productCart);
 
-router.get('/productCreate', productController.createProduct);
+router.get('/create', productController.createProduct);
 
-router.get('/productEdit', productController.modifyProduct);
+router.get('/edit', productController.modifyProduct);
 
 module.exports = router;
