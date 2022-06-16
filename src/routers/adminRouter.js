@@ -7,5 +7,7 @@ router.get('/product-Create', adminController.createProduct);
 
 router.get('/product-Edit', adminController.modifyProduct);
 
+
+
 module.exports = router;
 

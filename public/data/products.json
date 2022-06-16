@@ -1,6 +1,29 @@
 [{"id":1,
-    "NombreDeProducto":"dasdd",
-    "Descripcion":"dsfads",
-    "Color":"Pink",
-    "Precio":84
-}]
+    "nombreDeProducto":"dasdd",
+    "descripcion":"dsfads",
+    "color":"Pink",
+    "precio":84,
+    "image": "jordan-1-coconut.png"
+},
+{"id":2,
+    "nombreDeProducto":"dasddasdasd",
+    "descripcion":"dsfadsasdasd",
+    "color":"Pinksss",
+    "precio":848,
+    "image": "airmax-bw-marina.png"
+},
+{"id":3,
+    "nombreDeProducto":"dasddasdasd",
+    "descripcion":"dsfadsasdasd",
+    "color":"Pinksss",
+    "precio":848,
+    "image": "airmax-bw-marina.png"
+},
+{"id":4,
+    "nombreDeProducto":"dasddasdasd",
+    "descripcion":"dsfadsasdasd",
+    "color":"Pinksss",
+    "precio":848,
+    "image": "airmax-bw-marina.png"
+}
+]
