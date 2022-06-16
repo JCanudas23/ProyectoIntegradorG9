@@ -3,17 +3,17 @@
 <%- include ('./partials/head') %>
     <body>
         <%- include ('./partials/header') %>
-            <section class="bannerppal">
-                <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
-                <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
-            </section>
-            <main class="contenedor">
-                <section class="main-container">
-                    <div class="new-nav">
-                        <a href="#">
-                            <h3>Todos los productos</h3>
-                        </a></li>
-                        <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
+        <section class="bannerppal">
+            <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
+            <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
+        </section>
+        <main class="contenedor">
+            <section class="main-container">
+                <div class="new-nav">
+                    <a href="#">
+                        <h3>Todos los productos</h3>
+                    </a></li>
+                    <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
                     </div>
                     <div class="contenedor-productos">
                         <% products.forEach(function(prod){%>
@@ -37,9 +37,8 @@
                                 </a>
                             </article>
                             <% }) %>
-                </section>
-            </main>
-            <%- include ('./partials/footer') %>
-    </body>
-
-</html>
+                        </section>
+                    </main>
+                    <%- include ('./partials/footer') %>
+            </body>
+        </html>

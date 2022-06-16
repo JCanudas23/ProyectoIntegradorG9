@@ -18,7 +18,7 @@ const productRouter = require ('./routers/productRouter');
 
 const userRouter = require ('./routers/userRouter');
 
-const adminRouter = require ('./routers/adminRouter')
+/* const adminRouter = require ('./routers/adminRouter') */
 
 app.use('/', indexRouter);
 
@@ -26,7 +26,7 @@ app.use('/', productRouter);
 
 app.use('/', userRouter);
 
-app.use('/', adminRouter);
+/* app.use('/', adminRouter); */
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());

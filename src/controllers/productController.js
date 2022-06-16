@@ -18,9 +18,24 @@ const productController = {
         return res.render ('productCart');
     },
 
-	listaDeProducto : (req,res) => {
-        return res.render ('listaDeProducto');
+	listaDeProducto: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		res.render('listaDeProducto', {
+			products
+		})
+    },
+
+     adminController : {
+
+        createProduct : (req,res) => {
+            return res.render ('product-Create');
+        },
+    
+        modifyProduct : (req,res) => {
+            return res.render ('product-Edit');
+        }
     }
+    
 }
 
 module.exports = productController;
