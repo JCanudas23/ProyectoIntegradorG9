@@ -36,118 +36,20 @@
                 <button class="see-all__button">Ver todos</button>
             </div>
             <div class="contenedor-productos">
-
                 <% products.forEach(function(product){%>
                 <article class="product"> 
                     <a href="productDetail">                
                     <div class="product-img">   
-                        <img src="/img/products/<%= product.image %>" alt="product-image">
-                        <p class="precio"><span class="currency-symbol">$</span> <%= product.precio %></p>
+                        <img src="/img/products/<%= product.Image %>" alt="product-Image">
+                        <p class="precio"><span class="currency-symbol"><%= product.Precio %></span></p>
                     </div>
                     <div class="product-description ">
-                        <p class="product-model"><%= product.descripcion %></p>
-                        <h4><%= product.color %><br>a</h4>
+                        <p class="product-model"><%= product.Descripción %></p>
+                        <%= product.Color %>
                     </div>
                     </a> 
                 </article>
-
                 <% }) %>
-
-                <article class="product"> 
-                    <a href="productDetail">                
-                    <div class="product-img">   
-                        <img src="/img/products/jordan-1-coconut.png" alt="product-image">
-                        <p class="precio"><span class="currency-symbol">$</span> 575</p>
-                    </div>
-                    <div class="product-description ">
-                        <p class="product-model">Jordan 1 Mid SE</p>
-                        <h4>Coconut Milk<br>Particle Grey</h4>
-                    </div>
-                    </a> 
-                </article>
-
-                <article class="product">
-                    <a href="#">   
-                    <div class="product-img">
-                        <img src="/img/products/dunk-fossil-rose.png" alt="product-image">
-                        <p class="precio"><span class="currency-symbol">$</span> 110</p>
-                    </div>
-                    <div class="product-description ">
-                        <p class="product-model">Dunk Low</p>
-                        <h4>Fossil Rose</h4>
-                    </a>
-                </article>
-                <article class="product product-desktop">
-                    <div class="product-img">
-                        <img src="/img/products/airmax-off-noir.png" alt="product-image">
-                        <p class="precio"><span class="currency-symbol">$</span> 200</p>
-                    </div>
-                    <div class="product-description ">
-                        <p class="product-model">Air Max 97</p>
-                        <h4>Off Noir</h4>
-                    </div>
-                </article>
-                <article class="product product-desktop">
-                    <div class="product-img">
-                        <img src="/img/products/airmax-bw-marina.png" alt="product-image">
-                        <p class="precio"><span class="currency-symbol">$</span> 130</p>
-                    </div>
-                    <div class="product-description ">
-                        <p class="product-model">Air Max BW</p>
-                        <h4>Marina</h4>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="main-container">
-            <div class="new-nav">
-                <a href="#"><h3>Recomendados</h3></a>
-                <button class="see-all__button">Ver todos</button>
-            </div>
-            <div class="contenedor-productos">
-            <article class="product">
-                <div class="product-img">
-                    <img src="/img/products/airmax-off-noir.png" alt="product-image">
-                    <p class="precio"><span class="currency-symbol">$</span> 200</p>
-                </div>
-                <div class="product-description ">
-                    <p class="product-model">Air Max 97</p>
-                    <h4>Off Noir</h4>
-                </div>
-            </article>
-            <article class="product">
-                <div class="product-img">
-                    <img src="/img/products/airmax-bw-marina.png" alt="product-image">
-                    <p class="precio"><span class="currency-symbol">$</span> 130</p>
-                </div>
-                <div class="product-description ">
-                    <p class="product-model">Air Max BW</p>
-                    <h4>Marina</h4>
-                </div>
-            </article>
-            <article class="product product-desktop">
-                <div class="product-img">
-                    <img src="/img/products/airmax-off-noir.png" alt="product-image">
-                    <p class="precio"><span class="currency-symbol">$</span> 200</p>
-                </div>
-                <div class="product-description ">
-                    <p class="product-model">Air Max 97</p>
-                    <h4>Off Noir</h4>
-                </div>
-            </article>
-            <article class="product product-desktop">
-                <div class="product-img">
-                    <img src="/img/products/airmax-bw-marina.png" alt="product-image">
-                    <p class="precio"><span class="currency-symbol">$</span> 130</p>
-                </div>
-                <div class="product-description ">
-                    <p class="product-model">Air Max BW</p>
-                    <h4>Marina</h4>
-                </div>
-            </article>
-            </div>
-            </div>
         </section>
     </main>
     <%- include ('./partials/footer') %>
