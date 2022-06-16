@@ -12,7 +12,7 @@ router.get('/productCart', productController.productCart);
 
 router.get('/create', productController.createProduct);
 
-router.get('/edit', productController.modifyProduct);
+router.get('/edit/:id', productController.modifyProduct);
 
 router.delete('/delete/:id', productController.deleteProduct );
 

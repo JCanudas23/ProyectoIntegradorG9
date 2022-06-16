@@ -25,10 +25,10 @@ const userRouter = require ('./routers/userRouter');
 
 
 app.use('/', indexRouter);
-
+app.use('/products', productRouter);
+app.use('/user', userRouter);
 app.use('/', productRouter);
-
+app.use('/edit', productRouter);
 app.use('/', userRouter);
-
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
