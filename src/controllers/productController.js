@@ -31,7 +31,16 @@ const productController = {
     
     modifyProduct : (req,res) => {
         return res.render ('edit');
-    }   
+    },   
+
+    deleteProduct : (req, res) => {
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+  
+      let finalProducts = products.filter(product => product.id != req.params.id);
+      fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
+      
+      res.redirect("/products");
+    }
 }
 
 module.exports = productController;
