@@ -33,19 +33,20 @@
         <section class="main-container">
             <div class="new-nav">
                 <a href="#"><h3>Nuevas entradas</h3></a></li>
-                <button class="see-all__button">Ver todos</button>
+                <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
             </div>
             <div class="contenedor-productos">
-                <% products.forEach(function(product){%>
+                <% nuevos.forEach(function(prod){%>
                 <article class="product"> 
                     <a href="productDetail">                
                     <div class="product-img">   
-                        <img src="/img/products/<%= product.Image %>" alt="product-Image">
-                        <p class="precio"><span class="currency-symbol"><%= product.Precio %></span></p>
+                        <img src="/img/products/<%= prod.Image %>" alt="product-Image">
+                        <p class="precio"><span class="currency-symbol"><%= prod.Precio %></span></p>
                     </div>
+                    <p class = "Titulo"><span> <%= prod.Titulo %></span></p> 
                     <div class="product-description ">
-                        <p class="product-model"><%= product.Descripción %></p>
-                        <%= product.Color %>
+                        <p class="product-model"><%= prod.Descripción %></p>
+                        <%= prod.Color %>
                     </div>
                     </a> 
                 </article>

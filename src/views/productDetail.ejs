@@ -6,7 +6,7 @@
     <main class="contenedor">
         <section class="main-container">
             <div class="product-img">
-                <img src="/img/jordan-1-coconut.png" alt="product-image">
+                <img src="/img/products/zapatillas-bajas-sb-dunk-de-nike-x-travis-scott.jpg" alt="product-image">
                 <p class="precio">$ 575</p>
             </div>
             <div class="product-description ">
@@ -19,6 +19,8 @@
                 </button>
             </div>
             <div class="detalle-producto">
+
+                <% products.forEach(function(prod){%>
                 <article>
                     <h3>Detalles del producto</h3>
                     <p class="fuentedetail">Las botas Air Jordan 1 Mid Coconut Milk se inspiran en las raíces de
@@ -30,6 +32,7 @@
                     <p>Color:GRAY/BLACK-GYM RED</p>
                     <p>Fecha de lanzamiento:04/01/2020</p>
                 </article>
+                <% }) %>
             </div>
         </section>
     </main>

@@ -1,5 +1,6 @@
 
 [{"id":1,
+    "Ingreso":"nuevo",
     "Image":"zapatillas-bajas-sb-dunk-de-nike-x-travis-scott.jpg",
     "Titulo": "Zapatillas Bajas SB Dunk de Nike x Travis Scott",
     "Descripción": "Zapatillas bajas SB Dunk de Nike x Travis Scott de Nike con puntera redonda y suela plana de goma. Supplied by a premier sneaker marketplace dealing with unworn, already sold out, in demand rarities. Each product is rigorously inspected by experienced experts guaranteeing authenticity.",
@@ -25,6 +26,7 @@
 },
 {
     "id":4,
+    "Ingreso":"nuevo",
     "Image":"zapatillas-air-force-1-low-mca.jpg",
     "Titulo": "Zapatillas Air Force 1 Low MCA",
     "Descripción": "Azul. Cuero y goma. Cierre con cordones en la parte delantera. Detalle del logo Swoosh. Etiqueta con logo Zip Tie. Suela plana de goma.",
@@ -49,6 +51,7 @@
 },
 {
     "id":7,
+    "Ingreso":"nuevo",
     "Image":"zapatillas-off-white-x-nike-the-10-air-max-97-og.jpg",
     "Titulo": "Zapatillas Off-White x Nike The 10: Air Max 97 OG",
     "Descripción": "En goma de color rosa de Nike con lengüeta en la parte posterior, logo en relieve en la lengüeta, cierre con cordones en la parte delantera, logo de la marca en la parte delantera y lateral, logo Nike y suela con almohadilla de aire.",
@@ -81,6 +84,7 @@
 },
 {
     "id":11,
+    "Ingreso":"nuevo",
     "Image":"zapatillas-zoom-lebron-5.jpg",
     "Titulo": "Zapatillas Zoom Lebron 5",
     "Descripción": "En charol de Nike con diseño colour block, cierre autoadherente, cierre con cordones en la parte delantera, suela de goma y lengüeta en la parte posterior. Estos estilos son suministrados por un marketplace de zapatillas premium, el cual ofrece el calzado más codiciado y difícil de encontrar de todo el mundo.",
@@ -118,4 +122,13 @@
     "Descripción": "en cuero de color rojo de Jordan con puntera redonda, cierre con cordones en la parte delantera, parche del logo en la lengüeta, estampado gráfico, plantilla con logo y suela dentada de goma.",
     "Color":"",
     "Precio": "$ 138.325"
-}]
+},
+{
+    "id":16,
+    "Image":"zapatillas-altas-air-jordan-1.jpg",
+    "Titulo": "Zapatillas Air Jordan",
+    "Descripción": "en cuero de color rojo de Jordan con puntera redonda, cierre con cordones en la parte delantera, parche del logo en la lengüeta, estampado gráfico, plantilla con logo y suela dentada de goma.",
+    "Color":"",
+    "Precio": "$ 138.325"
+}
+]
