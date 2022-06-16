@@ -16,6 +16,10 @@ const productController = {
 
     productCart : (req,res) => {
         return res.render ('productCart');
+    },
+
+	listaDeProducto : (req,res) => {
+        return res.render ('listaDeProducto');
     }
 }
 

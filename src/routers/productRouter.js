@@ -7,5 +7,5 @@ router.get('/productDetail/:id', productController.productDetail);
 
 router.get('/productCart', productController.productCart);
 
-
+router.get('/listaDeProducto', productController.listaDeProducto);
 module.exports = router;
