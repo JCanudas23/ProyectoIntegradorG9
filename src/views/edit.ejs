@@ -11,27 +11,21 @@
         </div>  
 
         <div class="login-option">
-            <a href="/product-create" class="inicio-sesion"><P>Crear producto</P></a><p>/</p><a href="/product-edit" class="muembro-nuevo"><p>Modificar producto</p></a>
+            <a href="/product-create" class="inicio-sesion"><P>Crear producto</P></a><p>/</p><a href="/edit" class="muembro-nuevo"><p>Modificar producto</p></a>
         </div> 
-        <form action="/" method="put">
+        <form action="/" method="PUT">
             <div class="registro">
                 <div>   
-                    <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre de producto" required class="espacio-reg"> 
+                    <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre de producto" required class="espacio-reg" >
                 </div> 
                 <div>
-                    <input type="text" name="descripcion" id="descripcion" placeholder="descripcion" required class="espacio-reg">
+                    <input type="text" name="descripcion" id="descripcion" placeholder="descripcion" required class="espacio-reg" >
                 </div>
                 <div>
                     <input type="file" name="image" id="image" required class="espacio-reg">
                 </div>
                 <div>
-                    <input type="text" name="categoria" id="categoria" placeholder="Categoria" required class="espacio-reg">
-                </div>
-                <div>
-                    <input type="color" name="color" id="color" placeholder="Selecionar color" required class="espacio-reg">
-                </div>
-                <div>
-                    <input type="text" name="precio" id="precio" placeholder="Precio" required class="espacio-reg">
+                    <input type="text" name="precio" id="precio" placeholder="Precio" required class="espacio-reg" >
                 </div>
                 <div>
                     <button type="submit" name="confirmar" id="confirmar">Guardar</button>

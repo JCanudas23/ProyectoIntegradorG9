@@ -21,6 +21,8 @@ const productController = {
 		})
     },
 
+
+
     productCart : (req,res) => {
         return res.render ('productCart');
     },
@@ -30,8 +32,15 @@ const productController = {
     },
     
     modifyProduct : (req,res) => {
-        return res.render ('edit');
-    },   
+
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+      let id = req.params.id;
+      let product = products.find(product => product.id == id);
+        return res.render ('edit', {
+          product
+        });
+    },  
+    
 
     deleteProduct : (req, res) => {
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
