@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head') %> 
-<body>
-    <%- include ('./partials/header') %>
-    <main class="contenedor">
-        <section class="main-container">
-            <div class="product-img">
-                <img src="/img/products/zapatillas-bajas-sb-dunk-de-nike-x-travis-scott.jpg" alt="product-image">
-                <p class="precio">$ 575</p>
-            </div>
-            <div class="product-description ">
-                <p class="product-model"> Air Jordan<br> Mid SE</p>
-                <h4>High OG <br> Sneaker</h4>
-            </div>
-            <div>
-                <button type="submit" class="boton-enviar">
-                    <li><a href="/productCart"><b>Agregar al carrito </b></a>
-                </button>
-            </div>
-            <div class="detalle-producto">
+<%- include ('./partials/head') %>
 
-                <% products.forEach(function(prod){%>
-                <article>
-                    <h3>Detalles del producto</h3>
-                    <p class="fuentedetail">Las botas Air Jordan 1 Mid Coconut Milk se inspiran en las raíces de
-                        las zapatillas de basquet de 1985. Los colores son una reminiscencia de la combinación Chicago,
-                        aplicada a una silueta media y con un acabado negro en la puntera perforada.La marca Jumpman
-                        adorna la etiqueta tejida cosida en la lengüeta de nylon blanca acolchada, mientras que el
-                        logotipo clásico de Jordan Wings está estampado en negro en la solapa del cuello lateral.</p>
-                    <p>Estilo: 554725-069</p>
-                    <p>Color:GRAY/BLACK-GYM RED</p>
-                    <p>Fecha de lanzamiento:04/01/2020</p>
-                </article>
-                <% }) %>
-            </div>
-        </section>
-    </main>
-    <%- include ('./partials/footer') %>
-</body>
+    <body>
+        <%- include ('./partials/header') %>
+            <main class="contenedor">
+                <section class="main-container">
+                    <div class="product-img">
+                        <img src="/img/products/<%= product.Image %> " alt="product-image">
+                        <p class="precio">
+                            <%= product.Precio %>
+                        </p>
+                    </div>
+                    <div class="product-description ">
+                        <h4 class="product-model">
+                            <%= product.Titulo %>
+                        </h4>
+                    </div>
+                    <div>
+                        <button type="submit" class="boton-enviar">
+                            <li><a href="/productCart"><b>Agregar al carrito </b></a>
+                        </button>
+                    </div>
+                    <div class="detalle-producto">
+                        <article>
+                            <h3>Detalles del producto</h3>
+                            <p class="fuentedetail">
+                                <%= product.descripcion %>
+                            </p>
+                            <p>
+                                <%= product.Color %>
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </main>
+            <%- include ('./partials/footer') %>
+    </body>
 
 </html>

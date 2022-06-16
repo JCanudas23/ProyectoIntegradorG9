@@ -28,6 +28,8 @@ app.use('/', userRouter);
 
 app.use('/', adminRouter);
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 /* app.get('/', function (req, res) {
     let indexHtml = path.resolve(__dirname, "./views/index.html");
     res.sendFile(indexHtml);

@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/aa2d04da58.js" crossorigin="anonymous"></script>
 </head> -->
-<%- include ('./partials/head') %> 
-<body>
-<!--     <header class="header">
+<%- include ('./partials/head') %>
+
+    <body>
+        <!--     <header class="header">
         <div class="contenedor header-container">
             <div class="burger-menu nav-icons">
                 <a href="/login"><i class="fas fa-bars"></i></a>
@@ -24,35 +25,44 @@
             </div>
         </div>
     </header> -->
-    <%- include ('./partials/header') %>
-    <section class="bannerppal">
-        <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
-        <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
-    </section>
-    <main class="contenedor">
-        <section class="main-container">
-            <div class="new-nav">
-                <a href="#"><h3>Nuevas entradas</h3></a></li>
-                <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
-            </div>
-            <div class="contenedor-productos">
-                <% nuevos.forEach(function(prod){%>
-                <article class="product"> 
-                    <a href="productDetail">                
-                    <div class="product-img">   
-                        <img src="/img/products/<%= prod.Image %>" alt="product-Image">
-                        <p class="precio"><span class="currency-symbol"><%= prod.Precio %></span></p>
+        <%- include ('./partials/header') %>
+            <section class="bannerppal">
+                <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
+                <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
+            </section>
+            <main class="contenedor">
+                <section class="main-container">
+                    <div class="new-nav">
+                        <a href="#">
+                            <h3>Nuevos productos</h3>
+                        </a></li>
+                        <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
                     </div>
-                    <p class = "Titulo"><span> <%= prod.Titulo %></span></p> 
-                    <div class="product-description ">
-                        <p class="product-model"><%= prod.Descripción %></p>
-                        <%= prod.Color %>
-                    </div>
-                    </a> 
-                </article>
-                <% }) %>
-        </section>
-    </main>
-    <%- include ('./partials/footer') %>
-</body>
+                    <div class="contenedor-productos">
+                        <% nuevos.forEach(function(prod){%>
+                            <article class="product">
+                                <a href="/productDetail/<%= prod.id %>">
+                                    <div class="product-img">
+                                        <img src="/img/products/<%= prod.Image %>" alt="product-Image">
+                                        <p class="precio"><span class="currency-symbol">
+                                                <%= prod.Precio %>
+                                            </span></p>
+                                    </div>
+                                    <p class="Titulo"><span>
+                                            <%= prod.Titulo %>
+                                        </span></p>
+                                    <div class="product-description ">
+                                        <p class="product-model">
+                                            <%= prod.descripcion %>
+                                        </p>
+                                        <%= prod.Color %>
+                                    </div>
+                                </a>
+                            </article>
+                            <% }) %>
+                </section>
+            </main>
+            <%- include ('./partials/footer') %>
+    </body>
+
 </html>
