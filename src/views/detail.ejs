@@ -33,6 +33,10 @@
                             <button type="submit" class="boton-enviar">
                             <a href="/products/edit/<%= product.id %>" class="action-button edit">Editar producto</a>
                         </button>
+                        
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="boton-enviar" class="action-button delete">Eliminar Producto</button>	
+						</form>
                         </article>
                     </div>
                 </section>
