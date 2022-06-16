@@ -13,12 +13,12 @@
                         <a href="#">
                             <h3>Nuevos productos</h3>
                         </a></li>
-                        <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
+                        <a href="/products" class="see-all__button">Ver todos</a>
                     </div>
                     <div class="contenedor-productos">
                         <% nuevos.forEach(function(prod){%>
                             <article class="product">
-                                <a href="/productDetail/<%= prod.id %>">
+                                <a href="/products/detail/<%= prod.id %>">
                                     <div class="product-img">
                                         <img src="/img/products/<%= prod.Image %>" alt="product-Image">
                                         <p class="precio"><span class="currency-symbol">

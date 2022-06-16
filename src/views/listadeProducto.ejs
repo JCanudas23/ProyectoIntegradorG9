@@ -12,13 +12,12 @@
                 <div class="new-nav">
                     <a href="#">
                         <h3>Todos los productos</h3>
-                    </a></li>
-                    <a href="/listaDeProducto" class="see-all__button">Ver todos</a>
+                    </a>
                     </div>
                     <div class="contenedor-productos">
                         <% products.forEach(function(prod){%>
                             <article class="product">
-                                <a href="/productDetail/<%= prod.id %>">
+                                <a href="/products/detail/<%= prod.id %>">
                                     <div class="product-img">
                                         <img src="/img/products/<%= prod.Image %>" alt="product-Image">
                                         <p class="precio"><span class="currency-symbol">

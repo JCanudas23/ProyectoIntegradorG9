@@ -5,11 +5,18 @@ const productsFilePath = path.join(__dirname, '../../public/data/products.json')
 
 const productController = {
 
-    productDetail : (req,res)=> {
+    index: (req, res) => {
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		res.render('listaDeProducto', {
+			products
+		})
+    },
+
+    detail : (req,res)=> {
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		let id = req.params.id;
 		let product = products.find(product => product.id == id);
-		res.render('productDetail', {
+		res.render('detail', {
 			product
 		})
     },
@@ -18,24 +25,13 @@ const productController = {
         return res.render ('productCart');
     },
 
-	listaDeProducto: (req, res) => {
-		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render('listaDeProducto', {
-			products
-		})
+    createProduct : (req,res) => {
+        return res.render ('product-Create');
     },
-
-     adminController : {
-
-        createProduct : (req,res) => {
-            return res.render ('product-Create');
-        },
     
-        modifyProduct : (req,res) => {
-            return res.render ('product-Edit');
-        }
-    }
-    
+    modifyProduct : (req,res) => {
+        return res.render ('product-Edit');
+    }   
 }
 
 module.exports = productController;
