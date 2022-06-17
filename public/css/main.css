@@ -78,12 +78,6 @@
 }
 
 .product-model {
-    font-weight: 300;
-    color: var(--gris-claro);
-    font-size: 13px;
-}
-
-.product-description h4 {
     font-weight: 700;
     color: var(--gris-oscuro);
     font-size: 16px;

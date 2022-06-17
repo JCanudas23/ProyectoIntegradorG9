@@ -13,26 +13,33 @@
         <div class="login-option">
             <a href="/create" class="inicio-sesion"><P>Crear producto</P></a><p>/</p><a href="/edit" class="miembro-nuevo"><p>Modificar producto</p></a>
         </div> 
-        <form action="/" method="get">
+        <form action="/products" method="POST">
             <div class="registro">
+                <div>
+                    <label for="category" class="form-label">Categoría:</label>
+                    <select name="category" id="category" class="form-input">
+                        <option value="">Elegí</option>
+                        <option value="nuevo">Nuevo</option>
+                        <option value="retro">Retro</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="file" name="image" id="image" class="espacio-reg">
+                </div>
                 <div>   
-                    <input type="text" name="nombreProducto" id="nombreProducto" placeholder="Nombre de producto" required class="espacio-reg"> 
+                    <input type="text" name="name" id="name" placeholder="Nombre de producto" required class="espacio-reg"> 
                 </div> 
                 <div>
                     <input type="text" name="descripcion" id="descripcion" placeholder="descripcion" required class="espacio-reg">
                 </div>
                 <div>
-                    <input type="file" name="image" id="image" required class="espacio-reg">
-                </div>
-
-                <div>
                     <input type="color" name="color" id="color" placeholder="Selecionar color" required class="espacio-reg">
                 </div>
                 <div>
-                    <input type="text" name="precio" id="precio" placeholder="Precio" required class="espacio-reg">
+                    <input type="text" name="price" id="price" placeholder="Precio" required class="espacio-reg">
                 </div>
                 <div>
-                    <button type="submit" name="confirmar" id="confirmar">Guardar</button>
+                    <button type="submit">Guardar</button>
                 </div>
                 <div>
                     <button type="reset" name="eliminar" id="eliminar">Borrar Datos</button>

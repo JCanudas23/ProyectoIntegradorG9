@@ -21,8 +21,6 @@ const productController = {
 		})
     },
 
-
-
     productCart : (req,res) => {
         return res.render ('productCart');
     },
@@ -30,18 +28,52 @@ const productController = {
     createProduct : (req,res) => {
         return res.render ('create');
     },
+
+    store: (req,res) => {
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+      let newProduct = {
+        id: products[products.length - 1].id + 1,
+        category: req.body.category,
+        image: "",
+        name: req.body.name,
+        descripcion: req.body.descripcion,
+        color: req.body.color,
+        price: req.body.price
+      }
+      products.push(newProduct);
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+      res.redirect("/products");
+    },
     
     modifyProduct : (req,res) => {
-
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
       let id = req.params.id;
       let product = products.find(product => product.id == id);
-        return res.render ('edit', {
-          product
-        });
-    },  
-    
+      res.render ('edit', {product});
+    },
 
+    update: (req, res) => {
+      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+      let product = products.find(product => req.params.id == product.id);
+  
+      let editedProduct = {
+        id: req.params.id,
+        category: req.body.category,
+        image: "",
+        name: req.body.name,
+        descripcion: req.body.descripcion,
+        color: req.body.color,
+        price: req.body.price
+      }
+  
+      let indice = products.findIndex(product => product.id == req.params.id);
+      products[indice] = editedProduct;
+  
+      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+      res.redirect("/products");
+    },
+
+    
     deleteProduct : (req, res) => {
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
   

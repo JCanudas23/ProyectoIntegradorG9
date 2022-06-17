@@ -10,34 +10,63 @@
             <main class="contenedor">
                 <section class="main-container">
                     <div class="new-nav">
-                        <a href="#">
-                            <h3>Nuevos productos</h3>
-                        </a></li>
+                        <h3>Nuevos productos</h3>
                         <a href="/products" class="see-all__button">Ver todos</a>
                     </div>
                     <div class="contenedor-productos">
-                        <% nuevos.forEach(function(prod){%>
+                        <% nuevos.forEach(function(product){%>
                             <article class="product">
-                                <a href="/products/detail/<%= prod.id %>">
+                                <a href="/products/detail/<%= product.id %>">
                                     <div class="product-img">
-                                        <img src="/img/products/<%= prod.Image %>" alt="product-Image">
-                                        <p class="precio"><span class="currency-symbol">
-                                                <%= prod.Precio %>
-                                            </span></p>
-                                    </div>
-                                    <p class="Titulo"><span>
-                                            <%= prod.Titulo %>
-                                        </span></p>
-                                    <div class="product-description ">
-                                        <p class="product-model">
-                                            <%= prod.descripcion %>
+                                        <img src="/img/products/<%= product.image %>" alt="product-Image">
+                                        <p class="precio">
+                                            <span class="currency-symbol">
+                                                $
+                                            </span>
+                                        <%= product.price %>
                                         </p>
-                                        <%= prod.Color %>
+                                    </div>
+                                    <div class="product-description">
+                                        <p class="product-model">
+                                            <%= product.name %>
+                                        </p>
                                     </div>
                                 </a>
                             </article>
-                            <% }) %>
+                        <% }) %>
+                    </div>
                 </section>
+
+                <section class="main-container">
+                    <div class="new-nav">
+                        <h3>Retro</h3>
+                        <a href="/products" class="see-all__button">Ver todos</a>
+                    </div>
+                    <div class="contenedor-productos">
+                        <% old.forEach(function(product){%>
+                            <article class="product">
+                                <a href="/products/detail/<%= product.id %>">
+                                    <div class="product-img">
+                                        <img src="/img/products/<%= product.image %>" alt="product-Image">
+                                        <p class="precio">
+                                            <span class="currency-symbol">
+                                                $
+                                            </span>
+                                        <%= product.price %>
+                                        </p>
+                                    </div>
+                                    <div class="product-description">
+                                        <p class="product-model">
+                                            <%= product.name %>
+                                        </p>
+                                    </div>
+                                </a>
+                            </article>
+                        <% }) %>
+                    </div>
+                </section>
+
+                
             </main>
             <%- include ('./partials/footer') %>
     </body>
