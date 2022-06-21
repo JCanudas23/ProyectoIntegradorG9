@@ -5,48 +5,54 @@
 <body>
 
     <%- include ('./partials/header') %>
-    <main>
-        <div class="saludo-login"> 
-            <h4 class="hola-login">Crear Producto</h4><h4 class="punto-amarillo">.</h4>
-        </div>  
-
-        <div class="login-option">
-            <a href="/create" class="inicio-sesion"><P>Crear producto</P></a><p>/</p><a href="/edit" class="miembro-nuevo"><p>Modificar producto</p></a>
-        </div> 
-        <form action="/products" method="POST">
-            <div class="registro">
-                <div>
-                    <label for="category" class="form-label">Categoría:</label>
-                    <select name="category" id="category" class="form-input">
-                        <option value="">Elegí</option>
-                        <option value="nuevo">Nuevo</option>
-                        <option value="retro">Retro</option>
-                    </select>
+    <main class="contenedor">
+        <div class="container-form">
+            <div  class="tittle"> 
+                <h4 class="tittle_modify">Crear Producto<span class="punto-amarillo">.</span></h4>
+            </div>  
+            <form class="form_modify" action="/products" method="POST">
+                <div class="form_divs double_slot">
+                    <div>
+                        <label for="category" class="form-label">Categoría:</label>
+                        <select name="category" id="category" class="form-input">
+                            <option value="">Elegí</option>
+                            <option value="nuevo">Nuevo</option>
+                            <option value="retro">Retro</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="category" class="form-label">Fotografia:</label>
+                        <input type="file" name="image" id="image">
+                    </div>
                 </div>
-                <div>
-                    <input type="file" name="image" id="image" class="espacio-reg">
-                </div>
-                <div>   
-                    <input type="text" name="name" id="name" placeholder="Nombre de producto" required class="espacio-reg"> 
+                <div class="form_divs">
+                    <label for="name" class="form-label">Nombre:</label>   
+                    <input class="input_slot" type="text" name="name" id="name" required> 
                 </div> 
-                <div>
-                    <input type="text" name="descripcion" id="descripcion" placeholder="descripcion" required class="espacio-reg">
+                <div class="form_divs">
+                    <label for="descripcion" class="form-label">Descipción:</label>
+                    <textarea class="text_area input_slot" name="descripcion" id="descripcion" class="form-input">Descipción del producto</textarea>
                 </div>
-                <div>
-                    <input type="color" name="color" id="color" placeholder="Selecionar color" required class="espacio-reg">
+                <div class="double_slot form_divs">
+                    <div class="slot color_slot">
+                        <label for="color" class="form-label">Color:</label>
+                        <input class="input_slot" type="color" name="color" id="color" required>
+                    </div>
+                    <div class="slot price_slot">
+                        <label for="price" class="form-label">Precio:</label>
+                        <input class="input_slot" type="text" name="price" id="price" required>
+                    </div>
                 </div>
-                <div>
-                    <input type="text" name="price" id="price" placeholder="Precio" required class="espacio-reg">
-                </div>
-                <div>
-                    <button type="submit">Guardar</button>
-                </div>
-                <div>
-                    <button type="reset" name="eliminar" id="eliminar">Borrar Datos</button>
-                </div>
-            </div>    
-        </form>   
-    
+                <div class="buttons buttons_edit">
+                    <div>
+                        <button class="default_button" type="submit">Guardar</button>
+                    </div>
+                    <div>
+                        <button class="default_button reset_button" type="reset" name="eliminar" id="eliminar">Borrar Datos</button>
+                    </div>
+                </div>        
+            </form>
+        </div>
     </main>
 
     <%- include ('./partials/footer') %>
