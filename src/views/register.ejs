@@ -9,45 +9,43 @@
         <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
     </section>
     <main class="contenedor">
-        <div class="saludo-login"> 
-            <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
-        </div> 
-
-        <div class="login-option">
-            <a href="/user/login" class="inicio-sesion-register"><P>Iniciar sesión</P></a>
-            <p>/</p>
-            <a href="/user/register"><p class="miembro-nuevo">¿Eres nuevo?</p></a>
-        </div> 
-        <form action="/" method="get" class="form-inicio">
-            <div class="registro">
-                <div>   
-                    <!-- <label for="nombreApellido">Nombre y Apellido</label> -->
-                    <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" required class="espacio-reg"> 
-                </div> 
-                <div>
-                    <!-- <label for="nombreUsuario">Nombre de Usuari@</label> -->
-                    <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuari@" required class="espacio-reg">
-                </div>
-                <div>  <!-- span class="feedback" /span para mensajes de error --> 
-                    <input type="email" name="email" id="email" placeholder="E-mail" required class="espacio-reg">
-                </div>
-                <div>
-                    <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-reg">
-                </div>
-                <div>
-                    <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar Contraseña" required class="espacio-reg">
-                </div>
-                <div class="buttons" >
+        <div class="container-form">
+            <div class="saludo-login"> 
+                <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
+            </div> 
+            <div class="login-option">
+                <a href="/user/login" class="inicio-sesion-register"><P>Iniciar sesión</P></a>
+                <p>/</p>
+                <a href="/user/register"><p class="miembro-nuevo">¿Eres nuevo?</p></a>
+            </div> 
+            <form action="/" method="get" class="form-inicio">
+                <div class="registro">
                     <div>
-                        <button class="button-login" type="submit" name="enviar" id="enviar" class="espacio-login">Enviar</button>
+                        <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" required class="espacio-reg"> 
+                    </div> 
+                    <div>
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuari@" required class="espacio-reg">
                     </div>
                     <div>
-                        <button type="reset" name="delete" id="eliminar">Borrar</button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required class="espacio-reg">
                     </div>
-                </div>
-            </div>    
-        </form>   
-    
+                    <div>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-reg">
+                    </div>
+                    <div>
+                        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar Contraseña" required class="espacio-reg">
+                    </div>
+                    <div class="buttons" >
+                        <div>
+                            <button class="default_button button-login" type="submit" name="enviar" id="enviar" class="espacio-login">Enviar</button>
+                        </div>
+                        <div>
+                            <button class="default_button reset_button" type="reset" name="delete" id="eliminar">Borrar</button>
+                        </div>
+                    </div>
+                </div>    
+            </form>  
+        </div>
     </main>
     <%- include ('./partials/footer') %>
 </body>

@@ -1,24 +1,26 @@
-.saludo-login{
-    align-items: center;
+.saludo-login {
     font-size: 60px;
     margin-bottom: 15px;
- }
- 
- .punto-amarillo{
+}
+
+.punto-amarillo {
     color: #FFD600;
     margin-left: 4px;
- }
+}
 
- .hola-login{
-     color: #404040;
- }
+.hola-login {
+    color: #404040;
+}
  
- .login-option{
+.login-option{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row; 
     font-size: 18px;
     gap: 10px;
+}
+
+.login-option p{
+    color: var(--gris-oscuro);
  }
 
 .miembro-nuevo-login {
@@ -29,10 +31,6 @@
     font-weight: 400;
 }
  
-.login-option p{
-   color: var(--gris-oscuro);
-}
-
 .form-inicio{
     font-size: 18px;
     display: flex;
@@ -43,7 +41,6 @@
 }
 
 .form-inicio input{
-    margin: 8px;
     padding: 15px 30px;
     margin: 10px auto;
     width: 100%;
@@ -59,23 +56,21 @@
     text-align: center;
 }
 
-.button-login {
-    opacity: 1;
-}
-
-
-.form-inicio button{
-    margin: 8px;
+.default_button {
     color: var(--gris-oscuro);
     background-color: #FFD600;
     padding: 15px;
     margin: 10px auto;
-    width: 60%;
+    width: 100%;
     border-style: none;
+    cursor: pointer;
+}
+
+.reset_button {
     opacity: 0.5;
 }
 
-.form-inicio button:hover {
+.default_button:hover {
     opacity: 1;
 }
 
@@ -86,12 +81,8 @@
 }
 
 @media (min-width: 900px) {
-    .button-login {
-        flex-direction: row;
-    }
-
-    .button-login div {
-        width: 100%;
-        margin: 0px auto;
+    .container-form {
+        margin: auto;
+        width: 40%;
     }
 }

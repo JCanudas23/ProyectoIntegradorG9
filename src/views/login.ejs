@@ -8,10 +8,10 @@
         <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
     </section>
         <main class="contenedor">
-            <div class="saludo-login"> 
-                <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
-            </div> 
-
+            <div class="container-form">
+                <div class="saludo-login"> 
+                    <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
+                </div> 
                 <div class="login-option">
                     <a href="/user/login" class="inicio-sesion"><P>Iniciar sesión</P></a>
                     <p>/</p>
@@ -20,25 +20,25 @@
                 <form action="/" method="get" class="form-inicio">
                     <div>
                         <div>
-                            <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="E-mail" required class="espacio-login">
+                            <input type="email" name="nombreUsuario" id="nombreUsuario" placeholder="E-mail" required>
                         </div>
                         <div>
-                            <input type="password" name="password" id="password" placeholder="Contraseña" required class="espacio-login">
+                            <input type="password" name="password" id="password" placeholder="Contraseña" required>
                         </div>
                         <div>
                             <a href="#" class="menu">Recuperar Contraseña</a>
                         </div>
-                        <div class="buttons" >
+                        <div class="buttons">
                             <div>
-                                <button class="button-login" type="submit" name="confirmar" id="confirmar" class="espacio-login">Iniciar Sesion</button>
+                                <button class="default_button button-login" type="submit" name="confirmar" id="confirmar">Iniciar Sesion</button>
                             </div>
                             <div>
-                                <button type="reset" name="eliminar" id="eliminar">Regresar</button>
+                                <button class="default_button reset_button" type="reset" name="eliminar" id="eliminar">Regresar</button>
                             </div>
-                        </div>
-                        
+                        </div>    
                     </div>
-                </form>    
+                </form> 
+            </div>
         </main>
         <%- include ('./partials/footer') %>
     </body>

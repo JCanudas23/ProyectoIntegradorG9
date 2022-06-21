@@ -54,7 +54,6 @@ const productController = {
 
     update: (req, res) => {
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-      let product = products.find(product => req.params.id == product.id);
   
       let editedProduct = {
         id: req.params.id,
