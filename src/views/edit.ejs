@@ -11,7 +11,7 @@
             <div class="tittle"> 
                 <h4 class="tittle_modify">Modificar <%=product.name%><span class="punto-amarillo">.</span></h4>
             </div>
-            <form class="form_modify" action="/products/edit/<%= product.id %>?_method=PATCH" method="POST">
+            <form class="form_modify" action="/products/edit/<%= product.id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
                 <div class="form_divs double_slot">
                     <div>
                         <label for="category" class="form-label">Categoría:</label>
@@ -22,7 +22,7 @@
                         </select>
                     </div>
                     <div>
-                        <label for="category" class="form-label">Fotografia:</label>
+                        <label for="image" class="form-label">Fotografia:</label>
                         <input type="file" name="image" id="image">
                     </div>
                 </div>

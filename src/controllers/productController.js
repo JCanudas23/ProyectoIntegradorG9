@@ -34,7 +34,7 @@ const productController = {
       let newProduct = {
         id: products[products.length - 1].id + 1,
         category: req.body.category,
-        image: "",
+        image: req.file.filename,
         name: req.body.name,
         descripcion: req.body.descripcion,
         color: req.body.color,
@@ -58,7 +58,7 @@ const productController = {
       let editedProduct = {
         id: req.params.id,
         category: req.body.category,
-        image: "",
+        image: req.file.filename,
         name: req.body.name,
         descripcion: req.body.descripcion,
         color: req.body.color,
