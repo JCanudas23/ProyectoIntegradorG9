@@ -18,7 +18,7 @@
                 <p>/</p>
                 <a href="/user/register"><p class="miembro-nuevo">¿Eres nuevo?</p></a>
             </div> 
-            <form action="/" method="get" class="form-inicio">
+            <form action="/user" method="POST" class="form-inicio" enctype="multipart/form-data">
                 <div class="registro">
                     <div>
                         <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" required class="espacio-reg"> 
@@ -34,6 +34,10 @@
                     </div>
                     <div>
                         <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar Contraseña" required class="espacio-reg">
+                    </div>
+                    <div>
+                        <label for="image" class="form-label">Fotografia:</label>
+                        <input type="file" name="image" id="image">
                     </div>
                     <div class="buttons" >
                         <div>
