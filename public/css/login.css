@@ -40,13 +40,22 @@
     margin-top: 10px;
 }
 
-.form-inicio input{
+.espacio-reg{
     padding: 15px 30px;
     margin: 10px auto;
     width: 100%;
     color: var(--gris-claro);
     background-color: #e1e1e1;
     border-style: none;
+}
+
+.is-invalid {
+    border: solid 1px red;
+}
+
+.error-text {
+    font-size: 14px;
+    color: red;
 }
 
 .buttons {

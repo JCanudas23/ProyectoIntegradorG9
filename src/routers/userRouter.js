@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const {body} = require('express-validator');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -14,7 +15,28 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({storage})
+const upload = multer({storage});
+
+const validations = [
+    body('nombreApellido').notEmpty().withMessage('Tienes que escribir un nombre'),
+    body('nombreUsuario').notEmpty().withMessage('Tienes que escribir un nombre de usuario'),
+    body('email').notEmpty().withMessage('Tienes que escribir un correo electronico').bail().isEmail().withMessage('Ingresa un correo electronico valido'),
+    body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('passwordConfirm').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('image').custom((value, {req})=> {
+        let file = req.file;
+        let acceptedExtension = [".jpg",".png"];
+        if (!file){
+            throw new Error("Debes subir una imagen");
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtension.includes(fileExtension)) {
+                throw new Error(`las Extensiones de archivo validas son ${acceptedExtension.join(', ')}`)
+            }
+        }
+        return true;
+    })
+];
 
 
 const userController = require ( '../controllers/userController');
@@ -22,6 +44,6 @@ const userController = require ( '../controllers/userController');
 router.get('/login', userController.login);
 
 router.get('/register', userController.register);
-router.post('/',upload.single('image') , userController.userStore);
+router.post('/register',upload.single('image'), validations , userController.userStore);
 
 module.exports = router;
