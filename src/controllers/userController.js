@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
+const bcryptjs = require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 
@@ -31,10 +32,11 @@ const userController = {
             nombreApellido: req.body.nombreApellido,
             nombreUsuario: req.body.nombreUsuario,
             email: req.body.email,
-            password: req.body.password,
+            password: bcryptjs.hashSync(req.body.password, 10),
             passwordConfirm: req.body.passwordConfirm,
             image: req.file.filename,
         }
+        delete newUser.passwordConfirm;
         users.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
         res.redirect("/");

@@ -20,6 +20,10 @@ app.use('/', indexRouter);
 app.use('/products', productRouter);
 app.use('/user', userRouter);
 
+app.use((req,res,next) => {
+    res.status(404).send('not-found')
+})
+
 app.listen(3030, ()=> {
-    console.log("Servidor Corriendo en http://localhost:3030");
+    console.log("Bienvenido a Lacez http://localhost:3030");
 }); 

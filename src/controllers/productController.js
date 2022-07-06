@@ -63,11 +63,20 @@ const productController = {
 
     update: (req, res) => {
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+      let id = req.params.id;
+      let product = products.find(product => product.id == id);
+
+      let editImage;
+      if (req.file) {
+        editImage = req.file.filename
+      } else {
+        editImage = product.image
+      }
   
       let editedProduct = {
         id: req.params.id,
         category: req.body.category,
-        image: req.file.filename,
+        image: editImage,
         name: req.body.name,
         descripcion: req.body.descripcion,
         color: req.body.color,
