@@ -31,15 +31,24 @@ const productController = {
 
     store: (req,res) => {
       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+      let productImage;
+      if (req.file) {
+        productImage = req.file.filename
+      } else {
+        productImage = 'default.png'
+      }
+
       let newProduct = {
         id: products[products.length - 1].id + 1,
         category: req.body.category,
-        image: req.file.filename,
+        image: productImage,
         name: req.body.name,
         descripcion: req.body.descripcion,
         color: req.body.color,
         price: req.body.price
       }
+
       products.push(newProduct);
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
       res.redirect("/products");

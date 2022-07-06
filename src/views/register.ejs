@@ -80,14 +80,14 @@
                             </div>
                         <% } %>
                     </div>
-                    <div>
+                    <div class="form-image">
                         <label for="image" class="form-label">Fotografia:</label>
-                        <input type="file" name="image" id="image">
-                        <% if (locals.errors && errors.image) { %>
+                        <input type="file" name="image" id="image" class="image-reg">
+<!--                         <% if (locals.errors && errors.image) { %>
                             <div class="error-text">
                                 <%= errors.image.msg %>
                             </div>
-                        <% } %>
+                        <% } %> -->
                     </div>
                     <div class="buttons" >
                         <div>

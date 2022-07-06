@@ -22,7 +22,12 @@ const validations = [
     body('nombreUsuario').notEmpty().withMessage('Tienes que escribir un nombre de usuario'),
     body('email').notEmpty().withMessage('Tienes que escribir un correo electronico').bail().isEmail().withMessage('Ingresa un correo electronico valido'),
     body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-    body('passwordConfirm').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('passwordConfirm').notEmpty().withMessage('Confirmar contraseña vacio').custom((value,{req}) =>{
+        if(value !== req.body.password){
+            throw new Error('La contraseña no coincide')
+        }
+        return true;
+    }),
     body('image').custom((value, {req})=> {
         let file = req.file;
         let acceptedExtension = [".jpg",".png"];
