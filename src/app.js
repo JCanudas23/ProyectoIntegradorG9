@@ -2,14 +2,18 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const methodOverride = require("method-override");
+const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
 
 const app = express();
 
 app.use(session({
-    secret:"Esto nadie lo sabe uju",
+    secret:"Esto nadie lo sabe Lacez Society",
     resave: false,
     saveUninitialized: false
 }));
+
+app.use(userLoggedMiddleware);
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
