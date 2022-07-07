@@ -17,23 +17,28 @@
                     <p>/</p>
                     <a href="/user/register"><p class="miembro-nuevo-login">¿Eres nuevo?</p></a>
                 </div> 
-                <form action="/" method="get" class="form-inicio">
+                <form action="/user/login" method="POST" class="form-inicio">
                     <div>
                         <div>
-                            <input class="espacio-reg" type="email" name="nombreUsuario" id="nombreUsuario" placeholder="E-mail" required>
+                            <input class="espacio-reg" type="text" name="email" id="email" placeholder="E-mail">
+                            <% if (locals.errors && errors.email) { %>
+                                <div class="error-text">
+                                    <%= errors.email.msg %>
+                                </div>
+                            <% } %>
                         </div>
                         <div>
-                            <input class="espacio-reg" type="password" name="password" id="password" placeholder="Contraseña" required>
+                            <input class="espacio-reg" type="password" name="password" id="password" placeholder="Contraseña">
                         </div>
                         <div>
-                            <a href="#" class="menu">Recuperar Contraseña</a>
+                            <a href="#" class="menu">Recordar Mi Usuario</a>
                         </div>
                         <div class="buttons">
                             <div>
-                                <button class="default_button button-login" type="submit" name="confirmar" id="confirmar">Iniciar Sesion</button>
+                                <button class="default_button button-login" type="submit" id="confirmar">Iniciar Sesion</button>
                             </div>
                             <div>
-                                <button class="default_button reset_button" type="reset" name="eliminar" id="eliminar">Regresar</button>
+                                <button class="default_button reset_button" type="reset" id="eliminar">Regresar</button>
                             </div>
                         </div>    
                     </div>

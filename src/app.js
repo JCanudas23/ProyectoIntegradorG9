@@ -1,9 +1,15 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const methodOverride = require("method-override");
 
 const app = express();
 
+app.use(session({
+    secret:"Esto nadie lo sabe uju",
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

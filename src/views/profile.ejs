@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('./partials/head') %> 
+    <body>
+        <%- include ('./partials/header') %>
+    <section class="bannerppal">
+        <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
+        <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
+    </section>
+        <main class="contenedor">
+            <div class="container-form">
+                <div class="saludo-login"> 
+                    <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
+                </div>
+                <p><%= user.nombreUsuario%></p>
+                <img src="/img/users/<%= user.image %>" alt="Foto Usuario"> 
+            </div>
+        </main>
+        <%- include ('./partials/footer') %>
+    </body>
+</html>

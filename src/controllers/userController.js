@@ -17,6 +17,43 @@ const userController = {
         return res.render ('register');
     },
 
+    loginProcess: (req,res) => {
+        let userToLogin = user.findByField('email',req.body.email);
+        if (userToLogin) {
+            let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password)
+            if (passwordOk) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                res.redirect("/user/profile")
+            }
+            res.render('login', {
+                errors: {
+                    email: {
+                        msg:"Las credenciales son invalidas"
+                    }
+                }
+            });    
+        }
+        res.render('login', {
+            errors: {
+                email: {
+                    msg:"Email no registrado"
+                }
+            }
+        });
+    },
+
+    profile: (req,res) => {
+        return res.render ("profile" , {
+            user: req.session.userLogged
+        });
+    },
+
+    logout: (req,res) => {
+        req.session.destroy();
+        res.redirect('/');
+    },
+
     userStore : (req,res) => {
 
         const resultValidation = validationResult(req);
