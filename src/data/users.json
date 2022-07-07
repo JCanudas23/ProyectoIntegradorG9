@@ -1,11 +1,10 @@
 [
  {
   "id": 1,
-  "nombreApellido": "sadasd",
-  "nombreUsuario": "sadasd",
-  "email": "sadasd",
-  "password": "sadasd",
-  "passwordConfirm": "sadasd",
-  "image": ""
+  "nombreApellido": "gsreg",
+  "nombreUsuario": "juuu",
+  "email": "ju@gmail.com",
+  "password": "$2a$10$gpCI04YCqKeB0MLIdUBknOwzKsjcQoXk5O/bSfqo14jDR8sOHlvpK",
+  "image": "user-1657151406387.png"
  }
 ]

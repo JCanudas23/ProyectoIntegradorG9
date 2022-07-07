@@ -2,8 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
+const user = require('../models/User');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
+
 
 const userController = {
 
@@ -26,19 +28,27 @@ const userController = {
             });
         }
 
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        let newUser = {
-            id: users[users.length - 1].id + 1,
-            nombreApellido: req.body.nombreApellido,
-            nombreUsuario: req.body.nombreUsuario,
-            email: req.body.email,
+        let userInDb = user.findByField('email',req.body.email);
+        if (userInDb){
+            return res.render ('register', {
+                errors: {
+                    email:{
+                        msg:'Este email ya se encuentra registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+
+        let userToCreate = {
+            ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),
-            passwordConfirm: req.body.passwordConfirm,
             image: req.file.filename,
         }
-        delete newUser.passwordConfirm;
-        users.push(newUser);
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
+
+        user.create(userToCreate);
+
         res.redirect("/");
     } 
 }
