@@ -50,7 +50,7 @@
 .politics p {
     color: var(--gris-claro);
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 9px;
     font-weight: 300;
 }
 
@@ -65,4 +65,15 @@
 
 .copyright span {
     text-transform: uppercase;
+}
+
+@media (min-width: 381px) {
+
+.politics p {
+    color: var(--gris-claro);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+}
+    
 }

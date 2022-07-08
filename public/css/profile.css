@@ -1,31 +1,55 @@
 .user-image {
     clip-path: circle();
-    width: 20%;
+    width: 70%;
+    margin: auto;
 }
 
 .container-user {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+    justify-content: center;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.fa-pen-to-square {
+    color: var(--gris-claro);
+}
+
+.fa-pen-to-square:hover {
+    color: var(--amarillo);
 }
 
 .user-form {
+    position: relative;
     text-align: center;
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
-.user-name {
+.user-nickname {
     font-weight: 700;
     color: var(--gris-oscuro);
     font-size: 40px;
 }
 
+.user-name {
+    font-weight: 600;
+    color: var(--gris-oscuro);
+    font-size: 20px;
+    margin: 0px 0px 5px;
+}
+
 .user-email {
     color: var(--gris-claro);
+    margin: 0px 0px 15px;
 }
 
 .yellow-line {
@@ -38,4 +62,18 @@
 
 .user-main {
     margin-top: 50px;
+}
+
+@media (min-width: 381px) {
+    .user-image {
+        clip-path: circle();
+        width: 40%;
+    }  
+}
+
+@media (min-width: 900px) {
+    .user-image {
+        clip-path: circle();
+        width: 20%;
+    }  
 }

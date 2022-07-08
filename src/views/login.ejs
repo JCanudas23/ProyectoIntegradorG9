@@ -3,15 +3,9 @@
 <%- include ('./partials/head') %> 
     <body>
         <%- include ('./partials/header') %>
-    <section class="bannerppal">
-        <img class="hero-desktop" src="/img/hero-desktop.png" alt="img-banner-ppal">
-        <img class="hero-mobile" src="/img/hero-mobile.png" alt="img-banner-ppal">
-    </section>
         <main class="contenedor">
             <div class="container-form">
-                <div class="saludo-login"> 
                     <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
-                </div> 
                 <div class="login-option">
                     <a href="/user/login" class="inicio-sesion"><P>Iniciar sesión</P></a>
                     <p>/</p>
@@ -37,9 +31,7 @@
                             <div>
                                 <button class="default_button button-login" type="submit" id="confirmar">Iniciar Sesion</button>
                             </div>
-                            <div>
-                                <button class="default_button reset_button" type="reset" id="eliminar">Regresar</button>
-                            </div>
+                            <a class="buttons default_button reset_button" href="/">Regresar</a>
                         </div>    
                     </div>
                 </form> 

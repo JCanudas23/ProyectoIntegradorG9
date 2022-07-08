@@ -1,8 +1,3 @@
-.saludo-login {
-    font-size: 60px;
-    margin-bottom: 15px;
-}
-
 .punto-amarillo {
     color: #FFD600;
     margin-left: 4px;
@@ -10,6 +5,7 @@
 
 .hola-login {
     color: #404040;
+    font-size: 60px;
 }
  
 .login-option{
@@ -38,6 +34,14 @@
     flex-direction: column; 
     width: 100%;
     margin-top: 10px;
+}
+
+.container-form {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .espacio-reg{
@@ -78,6 +82,7 @@
 
 .reset_button {
     opacity: 0.5;
+    font-size: 14px;
 }
 
 .default_button:hover {
@@ -90,9 +95,14 @@
     font-weight: 300;
 }
 
+@media (min-width: 381px) {
+    .container-form {
+        width: 70%;
+    }
+}
+
 @media (min-width: 900px) {
     .container-form {
-        margin: auto;
         width: 40%;
     }
 }
