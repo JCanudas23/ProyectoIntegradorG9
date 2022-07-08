@@ -13,7 +13,7 @@ router.get('/login',guestMiddleware,userController.login);
 router.post('/login',userController.loginProcess);
 
 router.get ('/profile/',authMiddleware ,userController.profile);
-router.get ('/logout/',userController.profile);
+router.get ('/logout/',userController.logout);
 
 router.get('/register', guestMiddleware,userController.register);
 router.post('/register',upload.single('image'), validations , userController.userStore);

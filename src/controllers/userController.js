@@ -59,6 +59,16 @@ const userController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0 ){
+            let filename = req.file.filename;
+            let ruta = 'public/img/users/';
+            fs.unlink(ruta + filename, deleteFileCallback);
+            function deleteFileCallback(error){
+                if (error) {
+                    console.log('No se pudo borrar')
+                } else {
+                    console.log('borrado ' + filename);
+                }
+            }
             return res.render ('register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
@@ -67,6 +77,16 @@ const userController = {
 
         let userInDb = user.findByField('email',req.body.email);
         if (userInDb){
+            let filename = req.file.filename;
+            let ruta = 'public/img/users/';
+            fs.unlink(ruta + filename, deleteFileCallback);
+            function deleteFileCallback(error){
+                if (error) {
+                    console.log('No se pudo borrar')
+                } else {
+                    console.log('borrado ' + filename);
+                }
+            }
             return res.render ('register', {
                 errors: {
                     email:{

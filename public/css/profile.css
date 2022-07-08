@@ -1,0 +1,41 @@
+.user-image {
+    clip-path: circle();
+    width: 20%;
+}
+
+.container-user {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.user-form {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 700;
+    color: var(--gris-oscuro);
+    font-size: 40px;
+}
+
+.user-email {
+    color: var(--gris-claro);
+}
+
+.yellow-line {
+    margin: 20px 0px;
+    align-self: center;
+    width: 150px;
+    height: 1px;
+    background-color: var(--amarillo);
+}
+
+.user-main {
+    margin-top: 50px;
+}

@@ -40,7 +40,7 @@ const user = {
             id:this.generateId(),
             ...userData
         }
-        delete newUser.enviar;
+
         delete newUser.passwordConfirm;
         allUsers.push(newUser);
         fs.writeFileSync(usersFilePath, JSON.stringify(allUsers, null, " "));
