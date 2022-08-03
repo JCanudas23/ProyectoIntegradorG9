@@ -2,7 +2,9 @@ function userLoggedMiddleware (req,res,next){
     res.locals.isLogged = false;
 
     if (req.session && req.session.userLogged) {
-        res.locals.isLogged = true;
+        if (req.session.userLogged.role_id == 2){
+            res.locals.isLogged = 'cliente';
+        }
     }
     next();
 };

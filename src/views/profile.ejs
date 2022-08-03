@@ -5,15 +5,15 @@
         <%- include ('./partials/header') %>
         <main class="contenedor user-main">
             <div class="container-user">
-                <img class="user-image" src="/img/users/<%= user.image %>" alt="Foto Usuario">
+                <img class="user-image" src="/img/users/<%= user.avatar %>" alt="Foto Usuario">
                 <div class="user-form">
                     <div class="edit-icon">
                         <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                     <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
-                    <p class="user-nickname"><%= user.nombreUsuario%></p>
+                    <p class="user-nickname"><%= user.user_name%></p>
                     <div class="yellow-line"></div>
-                    <p class="user-name"><%= user.nombreApellido%></p>
+                    <p class="user-name"><%= user.name%></p>
                     <p class="user-email"><%= user.email%></p>
                     <a class="buttons default_button reset_button" href="/user/logout">Cerrar Sesion</a>
                 </div>

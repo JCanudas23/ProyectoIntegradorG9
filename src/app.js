@@ -2,7 +2,8 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const methodOverride = require("method-override");
-const userLoggedMiddleware=require("./middlewares/userLoggedMiddleware");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+const adminLoggedMiddleware = require("./middlewares/adminLoggedMiddleware");
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(session({
 }));
 
 app.use(userLoggedMiddleware);
+app.use(adminLoggedMiddleware);
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));

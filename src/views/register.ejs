@@ -17,34 +17,32 @@
             <form action="/user/register" method="POST" class="form-inicio" enctype="multipart/form-data">
                 <div class="registro">
                     <div>
-                        <input type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" class="espacio-reg
-                        <%- locals.errors && errors.nombreApellido ? 'is-invalid' : null
+                        <input type="text" name="name" id="name" placeholder="Nombre y Apellido" class="espacio-reg
+                        <%- locals.errors && errors.name ? 'is-invalid' : null
                         %> "
-                        value="<%=  locals.oldData ? oldData.nombreApellido : null%>"
+                        value="<%=  locals.oldData ? oldData.name : null%>"
                         >
-                        <% if (locals.errors && errors.nombreApellido) { %>
+                        <% if (locals.errors && errors.name) { %>
                             <div class="error-text">
-                                <%= errors.nombreApellido.msg %>
+                                <%= errors.name.msg %>
                             </div>
                         <% } %>
                     </div> 
                     <div>
-                        <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de Usuari@" class="espacio-reg 
-                        <%- locals.errors && errors.nombreUsuario ? 'is-invalid' : null
+                        <input type="text" name="user_name" id="user_name" placeholder="Nombre de Usuari@" class="espacio-reg 
+                        <%- locals.errors && errors.user_name ? 'is-invalid' : null
                         %>
                         "
-                        value="<%=  locals.oldData ? oldData.nombreUsuario : null%>">
-                        <% if (locals.errors && errors.nombreUsuario) { %>
+                        value="<%=  locals.oldData ? oldData.user_name : null%>">
+                        <% if (locals.errors && errors.user_name) { %>
                             <div class="error-text">
-                                <%= errors.nombreUsuario.msg %>
+                                <%= errors.user_name.msg %>
                             </div>
                         <% } %>
                     </div>
                     <div>
                         <input type="text" name="email" id="email" placeholder="E-mail" class="espacio-reg
-                        <%- locals.errors && errors.email ? 'is-invalid' : null
-                        %>
-                        "
+                        <%- locals.errors && errors.email ? 'is-invalid' : null %>"
                         value="<%=  locals.oldData ? oldData.email : null%>">
                         <% if (locals.errors && errors.email) { %>
                             <div class="error-text">
@@ -54,10 +52,8 @@
                     </div>
                     <div>
                         <input type="password" name="password" id="password" placeholder="Contraseña" class="espacio-reg
-                        <%- locals.errors && errors.password ? 'is-invalid' : null
-                        %>
-                        "
-                        value="<%=  locals.oldData ? oldData.password : null%>">
+                        <%- locals.errors && errors.password ? 'is-invalid' : null %>"
+                        value="">
                         <% if (locals.errors && errors.password) { %>
                             <div class="error-text">
                                 <%= errors.password.msg %>
@@ -69,7 +65,7 @@
                         <%- locals.errors && errors.passwordConfirm ? 'is-invalid' : null
                         %>
                         "
-                        value="<%=  locals.oldData ? oldData.passwordConfirm : null%>">
+                        value="">
                         <% if (locals.errors && errors.passwordConfirm) { %>
                             <div class="error-text">
                                 <%= errors.passwordConfirm.msg %>
@@ -77,13 +73,13 @@
                         <% } %>
                     </div>
                     <div class="form-image">
-                        <label for="image" class="form-label">Fotografia:</label>
-                        <input type="file" name="image" id="image" class="image-reg">
-<!--                         <% if (locals.errors && errors.image) { %>
+                        <label for="avatar" class="form-label">Avatar:</label>
+                        <input type="file" name="avatar" id="avatar" class="image-reg">
+                        <% if (locals.errors && errors.avatar) { %>
                             <div class="error-text">
-                                <%= errors.image.msg %>
+                                <%= errors.avatar.msg %>
                             </div>
-                        <% } %> -->
+                        <% } %>
                     </div>
                     <div class="buttons" >
                         <div>

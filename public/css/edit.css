@@ -1,13 +1,15 @@
 .tittle {
-    font-size: 34px;
-    margin: 15px auto;
+    font-size: 28px;
     color: var(--gris-oscuro);
+    width: 80%;
+    margin-bottom: 20px;
 }
 
 .modify_section {
     display: flex;
     flex-wrap: wrap;
     margin-top: 50px;
+    justify-content: flex-start;
 }
 
 .product_img {
@@ -19,23 +21,42 @@
 }
 
 .form-label {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--gris-oscuro);
     font-weight: 300;
+    width: 50%;
 }
 
 .double_slot {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .form_divs {
-    margin: 25px auto;
+    margin: 10px auto;
+}
+
+select {
+    border: none;
+}
+
+.div-select {
+    width: 48%;
 }
 
 .slot {
     width: 47%;
     height: 100%;
+}
+
+.form-select {
+    width: 100%;
+    display: flex;
+    padding: 15px 30px;
+    margin: 10px auto;
+    color: var(--gris-oscuro);
+    background-color: #e1e1e1;
 }
 
 .input_slot {

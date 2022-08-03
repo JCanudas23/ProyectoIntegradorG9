@@ -10,12 +10,12 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const userController = require ( '../controllers/userController');
 
 router.get('/login',guestMiddleware,userController.login);
-router.post('/login',userController.loginProcess);
+router.post('/login', validateUser , userController.loginProcess);
 
 router.get ('/profile/',authMiddleware ,userController.profile);
 router.get ('/logout/',userController.logout);
 
 router.get('/register', guestMiddleware,userController.register);
-router.post('/register',upload.single('image'), validations , userController.userStore);
+router.post('/register',upload.single('avatar'), validations , userController.userStore);
 
 module.exports = router;

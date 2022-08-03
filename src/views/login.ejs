@@ -23,6 +23,11 @@
                         </div>
                         <div>
                             <input class="espacio-reg" type="password" name="password" id="password" placeholder="Contraseña">
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="error-text">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
                         </div>
                         <div>
                             <a href="#" class="menu">Recordar Mi Usuario</a>
