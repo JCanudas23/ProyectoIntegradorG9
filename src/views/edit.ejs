@@ -6,7 +6,7 @@
 <%- include ('./partials/header') %>
 <main class="contenedor">
     <section class="modify_section">
-        <img class="product_img" src="/img/products/<%= product.Product_Image[0].image %> " alt="product-image">
+        <img class="product_img" src="/img/products/<%= product.Image[0].image %>" alt="product-image">
         <div class="product_info">
             <div class="tittle"> 
                 <h4 class="tittle_modify">Modificar <%=product.name%><span class="punto-amarillo">.</span></h4>
@@ -23,26 +23,22 @@
 
                 <div class="form-image">
                     <label for="image" class="form-label">Fotografia:</label>
-                    <input class="image-reg" type="file" name="image" id="image">
+                    <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
                 </div>
                 <div class="form_divs double_slot">
                     <div class="div-select">
                         <label for="category" class="form-label">Categoría:</label>
                         <select class="form-select" name="category" id="category" class="form-input">
-                            <option value="">Elegí</option>
-                            <option value="nuevo">Nuevo</option>
-                            <option value="retro">Retro</option>
+                            <option value="<%= product.category_id %>"><%= product.Category.category %></option>
+                            <option value="1">Nuevo</option>
+                            <option value="2">Retro</option>
                         </select>
                     </div>
-                    <div class="div-select">
-                        <label for="size" class="form-label">Talla:</label>
-                        <select class="form-select" name="size" id="size" class="form-input">
-                            <option value="">Elegí</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                        </select>
+                    <div class="form-image">
+                        <input <%= product.Product_Size[0] != undefined && (product.Product_Size[0].size != undefined) ? 'checked' : null  %> type="checkbox" id="1" name="size" value="1"> 8
+                        <input <%= product.Product_Size[1] != undefined && (product.Product_Size[1].size != undefined) ? 'checked' : null  %> type="checkbox" id="2" name="size" value="2"> 9
+                        <input <%= product.Product_Size[2] != undefined && (product.Product_Size[2].size != undefined) ? 'checked' : null  %> type="checkbox" id="3" name="size" value="3"> 10
+                        <input <%= product.Product_Size[3] != undefined && (product.Product_Size[3].size != undefined) ? 'checked' : null  %> type="checkbox" id="4" name="size" value="4"> 11
                     </div>
                 </div>
                 <div class="double_slot form_divs">                        

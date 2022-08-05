@@ -6,8 +6,8 @@
             <main class="contenedor">
                 <section class="detail-container">
                     <div class="detail-img">
-                        <% for (let i = 0; i < product.Product_Image.length; i++){ %>
-                            <img src="/img/products/<%= product.Product_Image[i].image %>" alt="product-image">
+                        <% for (let i = 0; i < product.Image.length; i++){ %>
+                            <img src="/img/products/<%= product.Image[i].image %>" alt="product-image">
                         <% } %>
                     </div>
                     <div class="product-details">
@@ -33,8 +33,8 @@
                                 <a class="default_button" href="/products/edit/<%= product.id %>" class="action-button edit">Editar producto</a>
                             </button>
                             
-                            <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
-                                <button class="default_button" type="submit" class="boton-enviar" class="action-button delete">Eliminar Producto</button>	
+                            <form action="/products/delete/<%= product.id %>?_method=PATCH" method="POST">
+                                <button type="submit" class="boton-enviar default_button action-button delete">Eliminar Producto</button>	
                             </form>
                         <% } %>
                         <div>

@@ -8,10 +8,17 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const indexController = {
     index : (req,res)=> {
 		db.Product.findAll({
-			include: ['Category','Product_Image','Product_Size']
+			include: ['Category','Image','Product_Size']
 		  }
 		  )
+		  .then ((products)=> {
+			const activos = products.filter(function(product){
+				return product.deleted == 0;
+			})
+			return activos
+		  })
 			.then((products) => {
+				console.log('----------------->',products);
 				const nuevos = products.filter(function(product){
 					return product.Category.category == 'Nuevo'
 				});

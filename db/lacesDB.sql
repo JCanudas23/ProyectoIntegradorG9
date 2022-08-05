@@ -17,12 +17,8 @@ CREATE TABLE `roles`(
 );
 CREATE TABLE `images`(
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `image` VARCHAR(255) NOT NULL
-);
-CREATE TABLE `product_image`(
-    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `product_id` INT NOT NULL,
-    `image_id` INT NOT NULL
+    `image` VARCHAR(255) NOT NULL,
+    `product_id` INT NOT NULL
 );
 CREATE TABLE `sizes`(
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -49,9 +45,7 @@ CREATE TABLE `categories`(
 ALTER TABLE
     `Users` ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY(`role_id`) REFERENCES `roles`(`id`);
 ALTER TABLE
-    `product_image` ADD CONSTRAINT `product_image_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `products`(`id`);
-ALTER TABLE
-    `product_image` ADD CONSTRAINT `product_image_image_id_foreign` FOREIGN KEY(`image_id`) REFERENCES `images`(`id`);
+    `images` ADD CONSTRAINT `images_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `products`(`id`);
 ALTER TABLE
     `product_size` ADD CONSTRAINT `product_size_product_id_foreign` FOREIGN KEY(`product_id`) REFERENCES `products`(`id`);
 ALTER TABLE

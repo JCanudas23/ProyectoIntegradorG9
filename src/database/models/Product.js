@@ -42,12 +42,9 @@ module.exports = (sequelize, dataTypes) => {
         as: "Category",
         foreignKey: "category_id",
       });
-      Product.belongsToMany(models.Image, {
-        as: "Product_Image",
-        through: "product_image",
+      Product.hasMany(models.Image, {
+        as: "Image",
         foreignKey: "product_id",
-        otherKey: "image_id",
-        timestamps: false,
       });
       Product.belongsToMany(models.Size, {
         as: "Product_Size",

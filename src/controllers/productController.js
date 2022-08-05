@@ -8,8 +8,14 @@ const productController = {
 
     index: (req, res) => {
     db.Product.findAll({
-      include: ['Category','Product_Image','Product_Size']
+      include: ['Category','Image','Product_Size']
     })
+    .then ((products)=> {
+			const activos = products.filter(function(product){
+				return product.deleted == 0;
+			})
+			return activos
+		  })
       .then((products) => {
         /* res.send (products) */
         res.render ('products', {products})
@@ -22,7 +28,7 @@ const productController = {
     detail : (req,res)=> {
 		let id = req.params.id;
     db.Product.findByPk (id,
-      {include: ['Category','Product_Image','Product_Size']}
+      {include: ['Category','Image','Product_Size']}
       )
       .then((product) => {
         /* res.send (product) */
@@ -50,40 +56,29 @@ const productController = {
               stock: req.body.stock,
               category_id: req.body.category,
               deleted : 0,
-              image: [{
-                image : req.file.filename
-              }]
-          } , {
-            include : db.Image
           }
       )
       .then ((result)=> {
         let newProductId = result.dataValues.id
-        let productSizes = req.body.size
-        console.log('------> 1',result);
-        productSizes.forEach(size => {
-          return db.Product_Size.create ({
-            product_id : newProductId,
-            size_id : size
-          }) 
-        });
-        
+        let productSizes = req.body.size.length > 1 ? req.body.size : [req.body.size];
+        let sizes = productSizes.map (size => {
+          return {product_id : newProductId,  size_id : size}
+        })
+        console.log("---------------------------> Tallas", productSizes);
+        return db.Product_Size.bulkCreate(sizes)
       })
      .then ((result)=> {
-        console.log('------> 2',result);
-        res.redirect ('products')
-      })/* 
-      .then ((result)=> {
-        console.log('------> 3',result);
-        return db.Product_Image.create ({
-          product_id: 1,
-          image_id : result.dataValues.id
+        let newProductId = result[0].dataValues.product_id
+        let images = req.files
+        console.log("---------------------------> ID", newProductId);
+        console.log("---------------------------> Imagen", images);
+         let imagesTocreate = images.map(file => {
+          return { image: file.filename , product_id: newProductId}
         })
-      })
-      .then((result) => {
-        console.log('------> Final',result);
+        console.log("---------------------------> imagenes", imagesTocreate);
+        db.Image.bulkCreate(imagesTocreate)
         res.redirect ('products')
-      }) */
+      })
       .catch( error =>
         res.send(error)
       )
@@ -92,7 +87,7 @@ const productController = {
     modifyProduct : (req,res) => {
       let id = req.params.id;
       db.Product.findByPk (id,
-        {include: ['Category','Product_Image','Product_Size']}
+        {include: ['Category','Image','Product_Size']}
         )
         .then((product) => {
           /* res.send (product) */
@@ -104,43 +99,72 @@ const productController = {
     },
 
     update: (req, res) => {
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-      let id = req.params.id;
-      let product = products.find(product => product.id == id);
 
-      let editImage;
-      if (req.file) {
-        editImage = req.file.filename
-      } else {
-        editImage = product.image
-      }
-  
-      let editedProduct = {
-        id: req.params.id,
-        category: req.body.category,
-        image: editImage,
-        name: req.body.name,
-        descripcion: req.body.descripcion,
-        color: req.body.color,
-        price: req.body.price
-      }
-  
-      let indice = products.findIndex(product => product.id == req.params.id);
-      products[indice] = editedProduct;
-  
-      fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-      res.redirect("/products");
+      db.Product.update(
+        {
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            stock: req.body.stock,
+            category_id: req.body.category,
+            deleted : 0,
+        },
+        {
+          where: { id: req.params.id },
+        }
+    )
+    .then(()=>{
+      db.Product_Size.destroy({
+        where: { product_id: req.params.id },
+      })
+    })
+    .then (()=> {
+      let productSizes = req.body.size.length > 1 ? req.body.size : [req.body.size];
+      let sizes = productSizes.map (size => {
+        return {product_id : req.params.id,  size_id : size}
+      })
+      return db.Product_Size.bulkCreate(
+        sizes,
+        {
+          updateOnDuplicate: ["product_id", "size_id"],
+        })
+    })
+    .then (()=> {
+      let images = req.files
+      let imagesTocreate = images.map(file => {
+        return { image: file.filename , product_id: req.params.id}
+      })
+      db.Image.bulkCreate(imagesTocreate,
+        {
+          updateOnDuplicate: ["size_id","product_id"],
+        })
+      res.redirect ('/products')
+    })
+    .catch( error =>
+      res.send(error))
     },
 
-    
     deleteProduct : (req, res) => {
-      const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-  
-      let finalProducts = products.filter(product => product.id != req.params.id);
-      fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
-      
-      res.redirect("/products");
+
+      db.Product.update({
+        deleted : 1,
+      },{
+        where: { id: req.params.id },
+      })
+      .then ((result)=>{ 
+        console.log('-------------------> resultado', result);
+        res.redirect("/products");
+      })
+/*       db.Product.destroy({
+        where: { id: req.params.id },
+      })
+      .then (()=>{
+        res.redirect("/products");
+      }) */
+      .catch( error =>
+        res.send(error))
     }
+    
 }
 
 module.exports = productController;
