@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const { Op } = require("sequelize");
-const { sequelize } = require('../database/models');
 
 const productController = {
 
@@ -44,11 +44,41 @@ const productController = {
     },
 
     createProduct : (req,res) => {
-        return res.render ('create');
+      db.Size.findAll()
+      .then ((sizes)=> {
+        console.log(sizes);
+        res.render ('create', {sizes})
+      })
+      .catch( error =>
+        res.send(error)
+      )
     },
 
     store: (req,res) => {
-      db.Product.create(
+      const resultValidation = validationResult(req,res);
+
+      if (resultValidation.errors.length > 0){
+        if (req.files != undefined) {
+          let files = req.files
+          let filename = [];
+          files.forEach(file => {
+            filename.push(file.filename);
+          });
+          let ruta = 'public/img/products/';
+          for (let i = 0; i < filename.length; i++) {
+            fs.unlink(ruta + filename[i], deleteFileCallback);
+            function deleteFileCallback(error){
+                if (error) {
+                    console.log('No se pudo borrar')
+                } else {
+                    console.log('borrado ' + filename[i]);
+                }
+            }
+          }
+      }
+        return res.render ('create', { errors: resultValidation.mapped(), oldData: req.body})
+      } else {
+        db.Product.create(
           {
               name: req.body.name,
               description: req.body.description,
@@ -64,24 +94,22 @@ const productController = {
         let sizes = productSizes.map (size => {
           return {product_id : newProductId,  size_id : size}
         })
-        console.log("---------------------------> Tallas", productSizes);
         return db.Product_Size.bulkCreate(sizes)
       })
      .then ((result)=> {
         let newProductId = result[0].dataValues.product_id
         let images = req.files
-        console.log("---------------------------> ID", newProductId);
-        console.log("---------------------------> Imagen", images);
-         let imagesTocreate = images.map(file => {
+        let imagesTocreate = images.map(file => {
           return { image: file.filename , product_id: newProductId}
         })
-        console.log("---------------------------> imagenes", imagesTocreate);
+        /* console.log("---------------------------> imagenes", imagesTocreate); */
         db.Image.bulkCreate(imagesTocreate)
         res.redirect ('products')
       })
       .catch( error =>
         res.send(error)
       )
+      }
     },
     
     modifyProduct : (req,res) => {
@@ -151,11 +179,10 @@ const productController = {
       },{
         where: { id: req.params.id },
       })
-      .then ((result)=>{ 
-        console.log('-------------------> resultado', result);
+      .then (()=>{
         res.redirect("/products");
       })
-/*       db.Product.destroy({
+/*    db.Product.destroy({
         where: { id: req.params.id },
       })
       .then (()=>{

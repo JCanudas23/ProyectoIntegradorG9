@@ -7,7 +7,9 @@
                 <section class="detail-container">
                     <div class="detail-img">
                         <% for (let i = 0; i < product.Image.length; i++){ %>
-                            <img src="/img/products/<%= product.Image[i].image %>" alt="product-image">
+                            <div class="image-container">
+                            <img class="product-image" src="/img/products/<%= product.Image[i].image %>" alt="product-image">
+                            </div>
                         <% } %>
                     </div>
                     <div class="product-details">

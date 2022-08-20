@@ -18,7 +18,7 @@ const indexController = {
 			return activos
 		  })
 			.then((products) => {
-				console.log('----------------->',products);
+				/* console.log('----------------->',products); */
 				const nuevos = products.filter(function(product){
 					return product.Category.category == 'Nuevo'
 				});

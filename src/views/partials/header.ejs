@@ -1,23 +1,80 @@
 <header class="header">
-    <div class="contenedor header-container">
-        <div class="nav-icons">
-            <a href="/"><i class="nav-href burger-menu fas fa-bars"></i></a>
-        </div>
-        <a  class="link-logo" href="/"><img class="logo-nav" src="/img/logo-gris.png" alt="img-Logo"></a>
-        <div class="nav-user-shopping">
-            <div class="nav-icons">
-                <a href="/user/login"><i class="nav-href fa-solid fa-user user-icon"></i></a>
-            </div>
-            <% if (locals.isLogged != 'admin') {%>
-            <div class="nav-icons">
-                <a href="/products/productCart"><i class="nav-href fa-solid fa-basket-shopping fad product-cart"></i></a>
-            </div>
-            <% } %>
-            <% if (locals.isLogged == 'admin') {%>
-            <div class="nav-icons">
-                <a href="/products/create"><i class="nav-href fa-solid fa-square-plus"></i></a>
-            </div>
-            <% } %>
+  <div class="contenedor header-container">
+    <div class="nav-icons" id="burgerMenu">
+      <i class="nav-href burger-menu fas fa-bars"></i>
+    </div>
+    <a class="link-logo" href="/"
+      ><img class="logo-nav" src="/img/logo-gris.png" alt="img-Logo"
+    /></a>
+    <div class="nav-user-shopping">
+      <div class="nav-icons">
+        <a href="/user/login"
+          ><i class="nav-href fa-solid fa-user user-icon"></i
+        ></a>
+      </div>
+      <% if (locals.isLogged != 'admin') {%>
+      <div class="nav-icons">
+        <a href="/products/productCart"
+          ><i class="nav-href fa-solid fa-basket-shopping fad product-cart"></i
+        ></a>
+      </div>
+      <% } %> <% if (locals.isLogged == 'admin') {%>
+      <div class="nav-icons">
+        <a href="/products/create"
+          ><i class="nav-href fa-solid fa-square-plus"></i
+        ></a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <div id="navMenu" class="nav-menu">
+    <i class="close-button fa-solid fa-xmark" id="closeButton"></i>
+    <nav>
+      <ul class="nav-menu__ul">
+        <li class="li-uno"><a class="link-burguer"  href="/">Inicio</a></li>
+        <li class="li-dos"><a class="link-burguer" href="/products">Productos</a></li>
+        <% if (!locals.isLogged) {%>
+        <li class="li-tres"><a class="link-burguer" href="/user/login">Iniciar Sesión</a></li>
+        <li class="li-cuatro"><a class="link-burguer" href="/user/register">Registrarse</a></li>
+        <% } %>
+        <% if (locals.isLogged) {%>
+        <li class="li-tres"><a class="link-burguer" href="/user/profile">Perfil</a></li>
+        <li class="li-cuatro"><a class="link-burguer" href="/user/logout">Cerrar Sesión</a></li>
+        <% } %>
+      </ul>
+    </nav>
+    <div class="shopping-bag">
+        <p class="shopping-bag-tittle">Bolsa de compras</p>
+        <div class="shopping-bag__content">
+            <p>0 items</p>
+            <p>$ 0.00</p>
         </div>
     </div>
+    <footer class="contenedor footer">
+        <div class="line"></div>
+        <div class="footer-flex">
+            <div class="redes">
+                <div>
+                    <h2 class="pie">Instagram</h2>                          
+                </div>
+                <div>
+                    <h2 class="pie">Facebook</h2>
+                </div>
+                <div>
+                    <h2 class="pie">Youtube</h2>                    
+                </div>
+            </div>
+            <div class="politics">
+                <p>Política de privacidad</p>
+                <div class="politics-line "></div>
+                <p>Condición de compra</p>
+            </div>
+        </div> 
+    
+        <div>
+            <h4 class="copyright copyright-nav"><span>©2022 Lacez Society.</span><br> Todos los derechos reservados</h4>
+        </div>                           
+    </footer>
+  </div>
+  <script src="/js/header.js"></script>
 </header>

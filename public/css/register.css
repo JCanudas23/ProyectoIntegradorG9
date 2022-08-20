@@ -9,6 +9,7 @@
 .form-image {
     display:flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .image-reg {
@@ -26,4 +27,10 @@
     width: 100%;
     color: var(--gris-oscuro);
     background-color: #e1e1e1;
+}
+
+@media (min-width: 900px) {
+    .form-image {
+        width: 48%;
+    }
 }

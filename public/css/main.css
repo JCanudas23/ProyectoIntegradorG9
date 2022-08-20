@@ -30,6 +30,10 @@
     color: var(--gris-claro);
 }
 
+.see-all__button:hover {
+    text-decoration: underline;
+}
+
 .contenedor-productos {
     display: flex;
     flex-wrap: wrap;
@@ -60,6 +64,7 @@
 .product {
     display: block;
     width: 48%;
+    transition: padding 0.2s;
 }
 
 .product-desktop {
@@ -81,7 +86,7 @@
     font-weight: 700;
     color: var(--gris-oscuro);
     font-size: 16px;
-    width: 60%;
+    width: 100%;
 }
 
 .product__size-hover {
@@ -91,6 +96,11 @@
 
 .product:hover .product__size-hover {
     opacity: 1;
+}
+
+.product:hover {
+    border: 2px solid var(--amarillo);
+    padding: 20px;
 }
 
 .product-size {
@@ -129,6 +139,10 @@
 
     .product-desktop {
         display:block;
+    }
+
+    .product-model {
+        width: 60%;
     }
 }
 

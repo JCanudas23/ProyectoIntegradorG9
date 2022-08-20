@@ -27,6 +27,7 @@
     background-color: white;
     box-shadow: 1px 1px 1px #cecece;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .nav-user-shopping {
@@ -47,6 +48,99 @@
     padding-left: 10px;
 }
 
+.fijar-body {
+    overflow: hidden;
+}
+
+.nav-menu {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.93);
+    animation-name:moveinytop;
+    animation-duration: .4s;
+    animation-timing-function: ease;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: var(--amarillo);
+}
+
+.show {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.show a {
+    font-weight: 700;
+    color: white;
+    font-size: 35px;
+    text-transform: uppercase;
+    animation-name:fadein;
+    animation-duration: 3s;
+    animation-direction: alternate;
+}
+
+.link-burguer:hover {
+    color: var(--amarillo);
+}
+
+.nav-menu__ul li{
+    margin: 15px 0px;
+}
+
+.li-uno {
+    animation-name: moveinxleft;
+    animation-duration: .5s;
+}
+.li-dos {
+    
+    animation-name: moveinxleft;
+    animation-duration: .7s;
+}
+.li-tres {
+    animation-name: moveinxleft;
+    animation-duration: .9s;
+}
+.li-cuatro {
+    animation-name: moveinxleft;
+    animation-duration: 1.1s;
+}
+
+.shopping-bag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--gris-claro);
+    margin: 50px 0px 30px;
+}
+
+.shopping-bag-tittle {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.shopping-bag__content {
+    margin: 20px 0px;
+    display: flex;
+    gap: 20px;
+}
 
 @media (min-width: 381px) {
     .logo-nav {
@@ -57,6 +151,16 @@
 @media (min-width: 900px) {
     .logo-nav {
         width: 10%;
+    }
+
+    .show a {
+        font-size: 55px;
+    }
+
+    .close-button {
+        top: 50px;
+        right: 550px;
+        font-size: 40px;
     }
 }
    

@@ -28,7 +28,7 @@ ALTER TABLE lacezdb.product_size AUTO_INCREMENT=1;
 DELETE FROM lacezdb.images;
 ALTER TABLE lacezdb.images AUTO_INCREMENT=1;
 
----- Populate everything ----
+-- Populate everything --
 
 -- categories --
 INSERT INTO lacezdb.categories (id,category) VALUES

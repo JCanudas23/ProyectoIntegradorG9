@@ -10,43 +10,93 @@
             <div  class="tittle"> 
                 <h4 class="tittle_modify">Crear Producto<span class="punto-amarillo">.</span></h4>
             </div>  
-            <form class="form_modify" action="/products" method="POST" enctype="multipart/form-data">
-                 <div class="form_divs double_slot">
-                    <div class="form-image">
-                        <label for="category" class="form-label">Categoría:</label>
-                        <select class="form-reg" name="category" id="category" class="form-input">
-                            <option value="">Elegí</option>
-                            <option value="1">Nuevo</option>
-                            <option value="2">Retro</option>
-                        </select>
-                    </div>
-                    <div class="form-image">
-                        <input type="checkbox" id="1" name="size" value="1"> 8
-                        <input type="checkbox" id="2" name="size" value="2"> 9
-                        <input type="checkbox" id="3" name="size" value="3"> 10
-                        <input type="checkbox" id="4" name="size" value="4"> 11
-                    </div>
-                </div>
-                <div class="form_divs">
+            <form id="formCreate" class="form_modify" action="/products" method="POST" enctype="multipart/form-data">
+                <div id="divProductName" class="form_divs">
                     <label for="name" class="form-label">Nombre:</label>   
-                    <input class="input_slot" type="text" name="name" id="name"> 
+                    <input class="input_slot" type="text" name="name" id="name" value="<%=  locals.oldData ? oldData.name : null%>">
+                    <div id="errorProductName" class="error-text"></div>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="error-text error-back">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                 </div> 
-                <div class="form_divs">
-                    <label for="descripcion" class="form-label">Descipción:</label>
-                    <textarea class="text_area input_slot" name="description" id="description" class="form-input"></textarea>
+                <div id="divProductDescription" class="form_divs">
+                    <label for="description" class="form-label">Descipción:</label>
+                    <textarea class="text_area input_slot" name="description" id="description" class="form-input"><%=  locals.oldData ? oldData.description : null%></textarea>
+                    <div id="errorProductDescription" class="error-text"></div>
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="error-text error-back">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
                 </div>
-                <div class="form_divs">
+                <div id="divProductStock" class="form_divs">
                     <label for="stock" class="form-label">Stock:</label>   
-                    <input class="input_slot" type="text" name="stock" id="stock" value="Stock"> 
+                    <input class="input_slot" type="text" name="stock" id="stock" value="<%=  locals.oldData ? oldData.stock : null%>">
+                    <div id="errorProductStock" class="error-text"></div>
+                    <% if (locals.errors && errors.stock) { %>
+                        <div class="error-text error-back">
+                            <%= errors.stock.msg %>
+                        </div>
+                    <% } %>
                 </div> 
+                <div class="form_divs double_slot">
+                    <div class="div-select">
+                        <label for="category" class="form-label">Categoría:</label>
+                        <select class="form-select" name="category" id="category" class="form-input">
+                            <option value="">Elegí</option>
+                            <%  let categories = ['','Nuevo','Retro']
+                            for (let i = 1; i < categories.length; i++) { %>
+                                <option <%=  locals.oldData && ( i == oldData.category) ? 'selected' : null %> value="<%= i %>"><%= categories[i] %></option>
+                            <% } %>
+                        </select>
+                        <div id="errorProductCategory" class="error-text"></div>
+                        <% if (locals.errors && errors.category) { %>
+                            <div class="error-text error-back">
+                                <%= errors.category.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="div-select">
+                        <label for="sizes" class="form-label">Tallas:</label>
+                        <div class="div-checkbox">
+                        <%  let sizes = [8,9,10,11]     
+                            for (let i = 0; i < sizes.length; i++) { %>
+                                <div class="size_checkbox">
+                                <input class="size__detail" type="checkbox" id="<%= sizes[i] - 7 %>" name="size" value="<%= sizes[i]- 7 %>" 
+                                <%=  locals.oldData && (( sizes[i]-7 == oldData.size)|| ( sizes[i]-7 == oldData.size[0]) || ( sizes[i]-7 == oldData.size[1]) || ( sizes[i]-7 == oldData.size[2]) || ( sizes[i]-7 == oldData.size[3]))  ? 'checked' : null %>
+                                >
+                                <p class="size__number"><%= sizes[i] %></p>
+                                </div>
+                        <% } %>
+                        </div>
+                        <div id="errorProductSize" class="error-text"></div>
+                        <% if (locals.errors && errors.sizes) { %>
+                            <div class="error-text error-back">
+                                <%= errors.sizes.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
                 <div class="double_slot form_divs">                  
                     <div class="form-image">
                         <label for="image" class="form-label">Fotografia:</label>
                         <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="error-text">
+                                <%= errors.image.msg %>
+                            </div>
+                        <% } %>
                     </div>
                     <div class="slot price_slot">
                         <label for="price" class="form-label">Precio:</label>
-                        <input class="input_slot" type="text" name="price" id="price">
+                        <input class="input_slot" type="text" name="price" id="price" value="<%=  locals.oldData ? oldData.price : null%>">
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="error-text">
+                                <%= errors.price.msg %>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
                 <div class="buttons buttons_edit">
@@ -60,7 +110,8 @@
             </form>
         </div>
     </main>
-
     <%- include ('./partials/footer') %>
+    <script src="/js/functions.js"></script>
+    <script src="/js/create.js"></script>
 </body>
 </html>

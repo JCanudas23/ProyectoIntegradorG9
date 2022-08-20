@@ -2,6 +2,7 @@
     --amarillo:#FFD600;
     --gris-oscuro:#404040;
     --gris-claro:#797979;
+    --gris-clarouno:#e1e1e1;
 }
 
 *{
@@ -29,4 +30,8 @@ a {
 
 img {
    width: 100%;
+}
+
+form {
+    position: relative;
 }

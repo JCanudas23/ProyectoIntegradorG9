@@ -4,27 +4,29 @@
     <body>
         <%- include ('./partials/header') %>
         <main class="contenedor">
-            <div class="container-form">
+            <div class="container-form container-form-login">
                     <h4 class="hola-login">Hola<span class="punto-amarillo">.</span></h4>
                 <div class="login-option">
                     <a href="/user/login" class="inicio-sesion"><P>Iniciar sesión</P></a>
                     <p>/</p>
                     <a href="/user/register"><p class="miembro-nuevo-login">¿Eres nuevo?</p></a>
                 </div> 
-                <form action="/user/login" method="POST" class="form-inicio">
+                <form id="formLogin" action="/user/login" method="POST" class="form-inicio">
                     <div>
-                        <div>
+                        <div id="divEmail" class="div-inputs">
                             <input class="espacio-reg" type="text" name="email" id="email" placeholder="E-mail">
+                            <div id="errorEmail" class="error-text"></div>
                             <% if (locals.errors && errors.email) { %>
-                                <div class="error-text">
+                                <div class="error-text error-back">
                                     <%= errors.email.msg %>
                                 </div>
                             <% } %>
                         </div>
-                        <div>
+                        <div id="divPassword" class="div-inputs">
                             <input class="espacio-reg" type="password" name="password" id="password" placeholder="Contraseña">
+                            <div id="errorPassword" class="error-text"></div>
                             <% if (locals.errors && errors.password) { %>
-                                <div class="error-text">
+                                <div class="error-text error-back">
                                     <%= errors.password.msg %>
                                 </div>
                             <% } %>
@@ -44,6 +46,8 @@
         </main>
         <%- include ('./partials/footer') %>
     </body>
+    <script src="/js/functions.js"></script>
+    <script src="/js/login.js"></script>
 </html>
 
 

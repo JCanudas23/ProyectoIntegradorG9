@@ -1,0 +1,74 @@
+/* Animaciones */
+
+@keyframes moveinytop {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0%);}
+}
+
+@keyframes moveinxleft {
+    from {transform: translateX(-500px);}
+    to {transform: translateX(0px);}
+}
+
+@keyframes fadein{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+/* Formulario */
+
+/* ----------- Validaciones ----------- */
+
+.div-inputs {
+    position: relative;
+}
+
+.is-invalid {
+    border: solid 1px red;
+}
+
+.is-valid {
+    border: solid 1px var(--amarillo);
+}
+
+.valid::after {
+    position: absolute;
+    top: -224px;
+    right: -224px;
+    transform: scale(.03);
+    content: url('/img/check.png');
+}
+
+.invalid::after {
+    position: absolute;
+    top: -224px;
+    right: -224px;
+    transform: scale(.02);
+    content: url('/img/cerrar.png');
+}
+
+.valid-label::after {
+    position: absolute;
+    top: -207px;
+    right: -224px;
+    transform: scale(.03);
+    content: url('/img/check.png');
+}
+
+.invalid-label::after {
+    position: absolute;
+    top: -207px;
+    right: -224px;
+    transform: scale(.02);
+    content: url('/img/cerrar.png');
+}
+
+
+@media (min-width: 381px) {
+
+}
+
+@media (min-width: 900px) {
+    
+}
+

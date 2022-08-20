@@ -14,69 +14,67 @@
                 <p>/</p>
                 <a href="/user/register"><p class="miembro-nuevo">¿Eres nuevo?</p></a>
             </div> 
-            <form action="/user/register" method="POST" class="form-inicio" enctype="multipart/form-data">
+            <form id="formRegister" action="/user/register" method="POST" class="form-inicio" enctype="multipart/form-data">
                 <div class="registro">
-                    <div>
+                    <div id="divName" class="div-inputs">
                         <input type="text" name="name" id="name" placeholder="Nombre y Apellido" class="espacio-reg
-                        <%- locals.errors && errors.name ? 'is-invalid' : null
-                        %> "
-                        value="<%=  locals.oldData ? oldData.name : null%>"
-                        >
+                        <%- locals.errors && errors.name ? 'is-invalid' : null %> "value="<%=  locals.oldData ? oldData.name : null%>">
+                        <div id="errorName" class="error-text"></div>
                         <% if (locals.errors && errors.name) { %>
-                            <div class="error-text">
+                            <div class="error-text error-back">
                                 <%= errors.name.msg %>
                             </div>
                         <% } %>
                     </div> 
-                    <div>
+                    <div id="divUserName" class="div-inputs">
                         <input type="text" name="user_name" id="user_name" placeholder="Nombre de Usuari@" class="espacio-reg 
-                        <%- locals.errors && errors.user_name ? 'is-invalid' : null
-                        %>
-                        "
-                        value="<%=  locals.oldData ? oldData.user_name : null%>">
+                        <%- locals.errors && errors.user_name ? 'is-invalid' : null %>" value="<%=  locals.oldData ? oldData.user_name : null%>">
+                        <div id="errorUserName" class="error-text"></div>
                         <% if (locals.errors && errors.user_name) { %>
-                            <div class="error-text">
+                            <div class="error-text error-back">
                                 <%= errors.user_name.msg %>
                             </div>
                         <% } %>
                     </div>
-                    <div>
+                    <div id="divUserEmail" class="div-inputs">
                         <input type="text" name="email" id="email" placeholder="E-mail" class="espacio-reg
-                        <%- locals.errors && errors.email ? 'is-invalid' : null %>"
-                        value="<%=  locals.oldData ? oldData.email : null%>">
+                        <%- locals.errors && errors.email ? 'is-invalid' : null %>" value="<%=  locals.oldData ? oldData.email : null%>">
+                        <div id="errorUserEmail" class="error-text"></div>
                         <% if (locals.errors && errors.email) { %>
-                            <div class="error-text">
+                            <div class="error-text error-back">
                                 <%= errors.email.msg %>
                             </div>
                         <% } %>
                     </div>
-                    <div>
+                    <div id="divUserPassword" class="div-inputs">
                         <input type="password" name="password" id="password" placeholder="Contraseña" class="espacio-reg
                         <%- locals.errors && errors.password ? 'is-invalid' : null %>"
                         value="">
+                        <div id="errorUserPassword" class="error-text"></div>
                         <% if (locals.errors && errors.password) { %>
-                            <div class="error-text">
+                            <div class="error-text error-back">
                                 <%= errors.password.msg %>
                             </div>
                         <% } %>
                     </div>
-                    <div>
+                    <div id="divUserCPassword" class="div-inputs">
                         <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmar Contraseña" class="espacio-reg
                         <%- locals.errors && errors.passwordConfirm ? 'is-invalid' : null
                         %>
                         "
                         value="">
+                        <div id="errorUserCPassword" class="error-text"></div>
                         <% if (locals.errors && errors.passwordConfirm) { %>
-                            <div class="error-text">
+                            <div class="error-text error-back">
                                 <%= errors.passwordConfirm.msg %>
                             </div>
                         <% } %>
                     </div>
-                    <div class="form-image">
+                    <div>
                         <label for="avatar" class="form-label">Avatar:</label>
                         <input type="file" name="avatar" id="avatar" class="image-reg">
                         <% if (locals.errors && errors.avatar) { %>
-                            <div class="error-text">
+                            <div class="error-text error-back">
                                 <%= errors.avatar.msg %>
                             </div>
                         <% } %>
@@ -85,14 +83,17 @@
                         <div>
                             <button class="default_button button-login" type="submit" id="enviar" class="espacio-login">Enviar</button>
                         </div>
-                        <div>
-                            <button class="default_button reset_button" type="reset" id="eliminar">Borrar</button>
-                        </div>
+                        <a class="buttons default_button reset_button" href="/">Regresar</a>
+<!--                         <div>
+                            <button class="default_button reset_button" type="reset">Borrar</button>
+                        </div> -->
                     </div>
                 </div>    
             </form>  
         </div>
     </main>
     <%- include ('./partials/footer') %>
+    <script src="/js/functions.js"></script>
+    <script src="/js/register.js"></script>
 </body>
 </html>

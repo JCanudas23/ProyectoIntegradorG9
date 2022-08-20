@@ -67,6 +67,10 @@
     text-transform: uppercase;
 }
 
+.copyright-nav {
+    color: var(--gris-claro);
+}
+
 @media (min-width: 381px) {
 
 .politics p {

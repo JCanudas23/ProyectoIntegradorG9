@@ -10,13 +10,13 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 
 const userController = require ( '../controllers/userController');
 
-router.get('/login', guestMiddleware, adminMiddleware ,userController.login);
+router.get('/login',adminMiddleware, guestMiddleware ,userController.login);
 router.post('/login', validateUser , userController.loginProcess);
 
 router.get ('/profile/', authMiddleware ,userController.profile);
 router.get ('/logout/',userController.logout);
 
-router.get('/register', guestMiddleware, adminMiddleware ,userController.register);
+router.get('/register', adminMiddleware, guestMiddleware ,userController.register);
 router.post('/register',upload.single('avatar'), validations , userController.userStore);
 
 module.exports = router;

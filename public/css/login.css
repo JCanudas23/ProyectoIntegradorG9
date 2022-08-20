@@ -44,6 +44,10 @@
     width: 100%;
 }
 
+.container-form-login {
+    height: 60vh;
+}
+
 .espacio-reg{
     padding: 15px 30px;
     margin: 10px auto;
@@ -51,10 +55,6 @@
     color: var(--gris-oscuro);
     background-color: #e1e1e1;
     border-style: none;
-}
-
-.is-invalid {
-    border: solid 1px red;
 }
 
 .error-text {

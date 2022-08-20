@@ -21,7 +21,7 @@
                     <textarea class="text_area input_slot" name="description" id="description" class="form-input"><%= product.description %></textarea>
                 </div>
 
-                <div class="form-image">
+                <div >
                     <label for="image" class="form-label">Fotografia:</label>
                     <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
                 </div>
@@ -30,15 +30,27 @@
                         <label for="category" class="form-label">Categoría:</label>
                         <select class="form-select" name="category" id="category" class="form-input">
                             <option value="<%= product.category_id %>"><%= product.Category.category %></option>
-                            <option value="1">Nuevo</option>
-                            <option value="2">Retro</option>
+                            <option value="<%= product.category_id === 1 ? 2 : 1 %>"><%= product.Category.category === 'Nuevo' ? 'Retro' : 'Nuevo' %></option>
+                            <!-- <option value="1">Nuevo</option>
+                            <option value="2">Retro</option> -->
                         </select>
                     </div>
                     <div class="form-image">
-                        <input <%= product.Product_Size[0] != undefined && (product.Product_Size[0].size != undefined) ? 'checked' : null  %> type="checkbox" id="1" name="size" value="1"> 8
-                        <input <%= product.Product_Size[1] != undefined && (product.Product_Size[1].size != undefined) ? 'checked' : null  %> type="checkbox" id="2" name="size" value="2"> 9
-                        <input <%= product.Product_Size[2] != undefined && (product.Product_Size[2].size != undefined) ? 'checked' : null  %> type="checkbox" id="3" name="size" value="3"> 10
-                        <input <%= product.Product_Size[3] != undefined && (product.Product_Size[3].size != undefined) ? 'checked' : null  %> type="checkbox" id="4" name="size" value="4"> 11
+                        <label for="sizes" class="form-label">Tallas:</label>
+                        <div class="div-checkbox">
+                            <div class="size_checkbox">
+                                <input class="size__detail" <%= product.Product_Size[0] != undefined && (product.Product_Size[0].size != undefined) ? 'checked' : null  %> type="checkbox" id="1" name="size" value="1"> <p class="size__number"> 8 </p>
+                            </div>
+                            <div class="size_checkbox">
+                                <input class="size__detail" <%= product.Product_Size[1] != undefined && (product.Product_Size[1].size != undefined) ? 'checked' : null  %> type="checkbox" id="2" name="size" value="2"> <p class="size__number"> 9 </p>
+                            </div>
+                            <div class="size_checkbox">
+                                <input class="size__detail" <%= product.Product_Size[2] != undefined && (product.Product_Size[2].size != undefined) ? 'checked' : null  %> type="checkbox" id="3" name="size" value="3"> <p class="size__number"> 10 </p>
+                            </div>
+                            <div class="size_checkbox">    
+                                <input class="size__detail" <%= product.Product_Size[3] != undefined && (product.Product_Size[3].size != undefined) ? 'checked' : null  %> type="checkbox" id="4" name="size" value="4"> <p class="size__number"> 11 </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="double_slot form_divs">                        
@@ -57,7 +69,7 @@
                         <button class="default_button" type="submit">Guardar</button>
                     </div>
                     <div>
-                        <button class="default_button reset_button" type="reset" name="eliminar" id="eliminar">Borrar Datos</button>
+                        <button class="default_button reset_button" type="reset" name="eliminar" id="eliminar">Revertir</button>
                     </div>
                 </div>    
             </form>
