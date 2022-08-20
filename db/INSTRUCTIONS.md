@@ -9,10 +9,11 @@ Para poder hacer uso de Lacež en primera medida debemos hacer un `npm install` 
 
 El Proyecto al iniciarse cuenta con 8 productos divididos en Nuevos y Retro, los cuales cuentan con sus respectivas imagenes y descripciones, y cuenta con dos perfiles de usuario ya creados con los roles de cliente y administrador. A continuación te damos los diferentes datos para poder acceder a los diferentes usuarios.
 
-##### Datos de usuarios 👤
+# Datos de usuarios 👤
+
 |    E-mail                   |Contraseña          |Rol                 |
 |-----------------------------|--------------------|--------------------|
-|admin_1@gmail.com            |1234                |Aministrador        |
+|admin_1@gmail.com            |1234                |Administrador        |
 |mkypapa.94@gmail.com         |1234                |Cliente             |
 
-##### 👟 Disfruta Lacež Society 👟
+# 👟 Disfruta Lacež Society 👟
