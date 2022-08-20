@@ -46,7 +46,6 @@ const productController = {
     createProduct : (req,res) => {
       db.Size.findAll()
       .then ((sizes)=> {
-        console.log(sizes);
         res.render ('create', {sizes})
       })
       .catch( error =>
@@ -56,13 +55,13 @@ const productController = {
 
     store: (req,res) => {
       const resultValidation = validationResult(req,res);
-
+      let oldSizes = req.body.size && (req.body.size.length > 1) ? req.body.size : [req.body.size]
       if (resultValidation.errors.length > 0){
         if (req.files != undefined) {
           let files = req.files
           let filename = [];
           files.forEach(file => {
-            filename.push(file.filename);
+          filename.push(file.filename);
           });
           let ruta = 'public/img/products/';
           for (let i = 0; i < filename.length; i++) {
@@ -76,7 +75,7 @@ const productController = {
             }
           }
       }
-        return res.render ('create', { errors: resultValidation.mapped(), oldData: req.body})
+        return res.render ('create', { errors: resultValidation.mapped(), oldData: req.body, oldSizes})
       } else {
         db.Product.create(
           {

@@ -11,11 +11,12 @@ window.onload = function () {
     let errorProductStock = document.querySelector("#errorProductStock");
     let productCategory = document.querySelector("#category");
     let errorProductCategory = document.querySelector("#errorProductCategory");
-    let productSize = document.querySelectorAll(".size__detail");
-    let errorProductSize = document.querySelector("#errorProductSize");
+    let productImage = document.querySelector("#image");
+    let errorProductImage = document.querySelector("#errorProductImage");
+    let productPrice = document.querySelector("#price");
+    let divProductPrice = document.querySelector("#divProductPrice");
+    let errorProductPrice = document.querySelector("#errorProductPrice");
     let errorBack = document.querySelectorAll(".error-back");
-
-    formCreate.name.focus();
 
     let productNameEvents = function (event) {
         // Activamos Eventos en conjunto
@@ -57,7 +58,8 @@ window.onload = function () {
         // Activamos Eventos en conjunto
         errorProductStock.innerHTML = "";
         functions.deleteBackErrorText(errorBack);
-        if (event.target.value == "") {
+        let regproductStock = /^\d+$/;
+        if (!regproductStock.test(event.target.value)) {
           errorProductStock.innerHTML += "Debes ingresar el stock del producto";
           functions.addRemoveClass(productStock, "is-invalid", "is-valid");
           functions.addRemoveClass(divProductStock, "invalid-label");
@@ -75,22 +77,81 @@ window.onload = function () {
         errorProductCategory.innerHTML = "";
         functions.deleteBackErrorText(errorBack);
         if (productCategory.value == "") {
+          functions.addRemoveClass(productCategory, "is-invalid", "is-valid");
           errorProductCategory.innerHTML += "Debes elegir la categoria del producto";
+        } else {
+          functions.addRemoveClass(productCategory, "is-valid", "is-invalid");
         }
       });
 
-      // Validamos Tallas
-      for (let i = 0; i < productSize.length; i++) {
-        productSize[i].addEventListener("mouseup", function(event){
-            let valueGen = productSize[i].value;
-            console.log(valueGen);
-            errorProductSize.innerHTML = '';
-            functions.deleteBackErrorText(errorBack);
-            if (productSize[i].value !== '1' && productSize[i].value !== '2' && productSize[i].value !== '3' && productSize[i].value !== '4') {
-              errorProductSize.innerHTML += "Debes elegir una talla";
-            }
-          });
-        
-      }
+      // Validamos Imagen
+      productImage.addEventListener("blur", function(){
+        errorProductImage.innerHTML = "";
+        functions.deleteBackErrorText(errorBack);
+        if (productImage.value == "") {
+          functions.addRemoveClass(productImage, "is-invalid", "is-valid");
+          errorProductImage.innerHTML += "Debes agregar una imagen del producto";
+        } else {
+          functions.addRemoveClass(productImage, "is-valid", "is-invalid");
+        }
+      });
       
+      let productPriceEvents = function (event) {
+        // Activamos Eventos en conjunto
+        errorProductPrice.innerHTML = "";
+        functions.deleteBackErrorText(errorBack);
+        let regproductPrice = /^\d+$/;
+        if (!regproductPrice.test(event.target.value)) {
+          errorProductPrice.innerHTML += "Debes ingresar el precio del producto";
+          functions.addRemoveClass(productPrice, "is-invalid", "is-valid");
+          functions.addRemoveClass(divProductPrice, "invalid-label");
+        } else {
+          functions.addRemoveClass(productPrice, "is-valid", "is-invalid");
+          functions.addRemoveClass(divProductPrice, "valid-label", "invalid-label");
+        }
+      };
+      // Añadimos multiples eventos al productPrice
+      productPrice.addEventListener("keyup", productPriceEvents, false);
+      productPrice.addEventListener("blur", productPriceEvents, false);
+
+      formCreate.addEventListener("submit", (event) => {
+        let errors = [];
+        functions.deleteBackErrorText(errorBack);
+        if (productName.value == "") {
+          errorProductName.innerHTML = "";
+          errorProductName.innerHTML += "Debes ingresar el nombre del producto";
+          errors.push(1);
+        }
+        if (productDescription.value == "") {
+          errorProductDescription.innerHTML = "";
+          errorProductDescription.innerHTML += "Debes ingresar una descripción de al menos 20 caracteres";
+          errors.push(1);
+        }
+        if (productStock.value == "") {
+          errorProductStock.innerHTML = "";
+          errorProductStock.innerHTML += "Debes ingresar el stock del producto";
+          errors.push(1);
+        }
+        if (productCategory.value == "") {
+          errorProductCategory.innerHTML = "";
+          errorProductCategory.innerHTML += "Debes elegir la categoria del producto";
+          errors.push(1);
+        }
+        if (productImage.value == "") {
+          errorProductImage.innerHTML = "";
+          errorProductImage.innerHTML += "Debes agregar una imagen del producto";
+          errors.push(1);
+        }
+        if (productPrice.value == "") {
+          errorProductPrice.innerHTML = "";
+          errorProductPrice.innerHTML += "Debes ingresar el precio del producto";
+          errors.push(1);
+        }        
+        if (errors.length > 0) {
+          event.preventDefault();
+        } else {
+          event.submit;
+        }
+      });
 };
+

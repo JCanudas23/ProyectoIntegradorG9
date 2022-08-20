@@ -59,19 +59,18 @@
                         <% } %>
                     </div>
                     <div class="div-select">
-                        <label for="sizes" class="form-label">Tallas:</label>
+                        <label for="size" class="form-label">Tallas:</label>
                         <div class="div-checkbox">
                         <%  let sizes = [8,9,10,11]     
                             for (let i = 0; i < sizes.length; i++) { %>
                                 <div class="size_checkbox">
                                 <input class="size__detail" type="checkbox" id="<%= sizes[i] - 7 %>" name="size" value="<%= sizes[i]- 7 %>" 
-                                <%=  locals.oldData && (( sizes[i]-7 == oldData.size)|| ( sizes[i]-7 == oldData.size[0]) || ( sizes[i]-7 == oldData.size[1]) || ( sizes[i]-7 == oldData.size[2]) || ( sizes[i]-7 == oldData.size[3]))  ? 'checked' : null %>
+                                <%=  locals.oldSizes && ( sizes[i]-7 == oldSizes[0] || sizes[i]-7 == oldSizes[1] || sizes[i]-7 == oldSizes[2] || sizes[i]-7 == oldSizes[3])  ? 'checked' : null %>
                                 >
                                 <p class="size__number"><%= sizes[i] %></p>
                                 </div>
                         <% } %>
                         </div>
-                        <div id="errorProductSize" class="error-text"></div>
                         <% if (locals.errors && errors.sizes) { %>
                             <div class="error-text error-back">
                                 <%= errors.sizes.msg %>
@@ -83,15 +82,17 @@
                     <div class="form-image">
                         <label for="image" class="form-label">Fotografia:</label>
                         <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
+                        <div id="errorProductImage" class="error-text"></div>
                         <% if (locals.errors && errors.image) { %>
                             <div class="error-text">
                                 <%= errors.image.msg %>
                             </div>
                         <% } %>
                     </div>
-                    <div class="slot price_slot">
+                    <div id="divProductPrice" class="slot price_slot">
                         <label for="price" class="form-label">Precio:</label>
                         <input class="input_slot" type="text" name="price" id="price" value="<%=  locals.oldData ? oldData.price : null%>">
+                        <div id="errorProductPrice" class="error-text"></div>
                         <% if (locals.errors && errors.price) { %>
                             <div class="error-text">
                                 <%= errors.price.msg %>
