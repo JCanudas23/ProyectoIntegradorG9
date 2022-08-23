@@ -75,7 +75,7 @@ const productController = {
             }
           }
       }
-        return res.render ('create', { errors: resultValidation.mapped(), oldData: req.body, oldSizes})
+        return res.render ('create', {errors: resultValidation.mapped(), oldData: req.body, oldSizes})
       } else {
         db.Product.create(
           {
@@ -126,7 +126,34 @@ const productController = {
     },
 
     update: (req, res) => {
-
+      let id = req.params.id;
+      const resultValidation = validationResult(req,res);
+      if (resultValidation.errors.length > 0){
+        db.Product.findByPk (id,
+          {include: ['Category','Image','Product_Size']}
+          )
+          .then((product) => {
+            if (req.files != undefined) {
+              let files = req.files
+              let filename = [];
+              files.forEach(file => {
+              filename.push(file.filename);
+              });
+              let ruta = 'public/img/products/';
+              for (let i = 0; i < filename.length; i++) {
+                fs.unlink(ruta + filename[i], deleteFileCallback);
+                function deleteFileCallback(error){
+                    if (error) {
+                        console.log('No se pudo borrar')
+                    } else {
+                        console.log('borrado ' + filename[i]);
+                    }
+                }
+              }
+          } 
+            res.render ('edit', {product, errors: resultValidation.mapped()})
+          })
+      } else {
       db.Product.update(
         {
             name: req.body.name,
@@ -169,7 +196,7 @@ const productController = {
     })
     .catch( error =>
       res.send(error))
-    },
+    }},
 
     deleteProduct : (req, res) => {
 

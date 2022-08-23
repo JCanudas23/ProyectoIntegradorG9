@@ -109,22 +109,26 @@ window.onload = function () {
   formRegister.addEventListener("submit", (event) => {
     let errors = [];
     functions.deleteBackErrorText(errorBack);
-    if (name.value == "") {
+    let regName = /^[A-Za-z]{4}/;
+    if (!regName.test(name.value)) {
       errorName.innerHTML = "";
       errorName.innerHTML += "Debes ingresar un nombre";
       errors.push(1);
     }
-    if (userName.value == "") {
+    let regUserName = /^[A-Za-z]{2}/;
+    if (!regUserName.test(userName.value)) {
       errorUserName.innerHTML = "";
       errorUserName.innerHTML += "Debes ingresar un nombre de usuario valido";
       errors.push(1);
     }
-    if (userEmail.value == "") {
+    let regUserEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (!regUserEmail.test(userEmail.value)) {
       errorUserEmail.innerHTML = "";
       errorUserEmail.innerHTML += "Debes ingresar un E-mail valido";
       errors.push(1);
     }
-    if (userPassword.value == "") {
+    let regUserPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!regUserPassword.test(userPassword.value)) {
       errorUserPassword.innerHTML = "";
       errorUserPassword.innerHTML +=
         "Debes ingresar una contraseña, deberá contener al menos 8 carácteres, una Mayúscula, un numero y un carácter especial";

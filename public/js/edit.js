@@ -1,5 +1,5 @@
 window.onload = function () {
-    let formCreate = document.querySelector("#formCreate");
+    let formEdit = document.querySelector("#formEdit");
     let productName = document.querySelector("#name");
     let divProductName = document.querySelector("#divProductName");
     let errorProductName = document.querySelector("#errorProductName");
@@ -9,10 +9,6 @@ window.onload = function () {
     let productStock = document.querySelector("#stock");
     let divProductStock = document.querySelector("#divProductStock");
     let errorProductStock = document.querySelector("#errorProductStock");
-    let productCategory = document.querySelector("#category");
-    let errorProductCategory = document.querySelector("#errorProductCategory");
-    let productImage = document.querySelector("#image");
-    let errorProductImage = document.querySelector("#errorProductImage");
     let productPrice = document.querySelector("#price");
     let divProductPrice = document.querySelector("#divProductPrice");
     let errorProductPrice = document.querySelector("#errorProductPrice");
@@ -71,30 +67,6 @@ window.onload = function () {
       // Añadimos multiples eventos al productStock
       productStock.addEventListener("keyup", productStockEvents, false);
       productStock.addEventListener("blur", productStockEvents, false);
-
-      // Validamos Categoria
-      productCategory.addEventListener("blur", function(){
-        errorProductCategory.innerHTML = "";
-        functions.deleteBackErrorText(errorBack);
-        if (productCategory.value == "") {
-          functions.addRemoveClass(productCategory, "is-invalid", "is-valid");
-          errorProductCategory.innerHTML += "Debes elegir la categoria del producto";
-        } else {
-          functions.addRemoveClass(productCategory, "is-valid", "is-invalid");
-        }
-      });
-
-      // Validamos Imagen
-      productImage.addEventListener("blur", function(){
-        errorProductImage.innerHTML = "";
-        functions.deleteBackErrorText(errorBack);
-        if (productImage.value == "") {
-          functions.addRemoveClass(productImage, "is-invalid", "is-valid");
-          errorProductImage.innerHTML += "Debes agregar una imagen del producto";
-        } else {
-          functions.addRemoveClass(productImage, "is-valid", "is-invalid");
-        }
-      });
       
       let productPriceEvents = function (event) {
         // Activamos Eventos en conjunto
@@ -114,7 +86,7 @@ window.onload = function () {
       productPrice.addEventListener("keyup", productPriceEvents, false);
       productPrice.addEventListener("blur", productPriceEvents, false);
 
-      formCreate.addEventListener("submit", (event) => {
+      formEdit.addEventListener("submit", (event) => {
         let errors = [];
         functions.deleteBackErrorText(errorBack);
         let regproductName = /^[A-Za-z0-9\s]{5}/;
@@ -133,16 +105,6 @@ window.onload = function () {
         if (!regproductStock.test(productStock.value)) {
           errorProductStock.innerHTML = "";
           errorProductStock.innerHTML += "Debes ingresar el stock del producto";
-          errors.push(1);
-        }
-        if (productCategory.value == "") {
-          errorProductCategory.innerHTML = "";
-          errorProductCategory.innerHTML += "Debes elegir la categoria del producto";
-          errors.push(1);
-        }
-        if (productImage.value == "") {
-          errorProductImage.innerHTML = "";
-          errorProductImage.innerHTML += "Debes agregar una imagen del producto";
           errors.push(1);
         }
         let regproductPrice = /^\d+$/;

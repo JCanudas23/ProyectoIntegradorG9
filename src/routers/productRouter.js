@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-
 const validationsCreate = require('../middlewares/validateCreateProductMiddleware');
+const validationsEdit = require('../middlewares/validateEditProductMiddleware');
 const path = require('path');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
@@ -31,7 +31,7 @@ router.get('/create', authMiddleware , guestMiddleware , productController.creat
 router.post('/', upload.array('image', 4), validationsCreate, productController.store);
 
 router.get('/edit/:id', authMiddleware , guestMiddleware , productController.modifyProduct);
-router.patch('/edit/:id', upload.array('image', 4),productController.update);
+router.patch('/edit/:id', upload.array('image', 4), validationsEdit ,productController.update);
 
 router.patch('/delete/:id', productController.deleteProduct );
 

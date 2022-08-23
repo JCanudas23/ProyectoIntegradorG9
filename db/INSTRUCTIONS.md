@@ -17,4 +17,3 @@ El proyecto al iniciarse, contiene 8 productos divididos en Nuevos y Retro, los 
 |mkypapa.94@gmail.com         |1234                |Cliente             |
 
 # 👟 Disfruta Lacež Society 👟
-

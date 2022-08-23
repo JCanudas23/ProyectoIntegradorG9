@@ -11,19 +11,35 @@
             <div class="tittle"> 
                 <h4 class="tittle_modify">Modificar <%=product.name%><span class="punto-amarillo">.</span></h4>
             </div>
-            <form class="form_modify" action="/products/edit/<%= product.id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
-                <div class="form_divs">
+            <form id="formEdit" class="form_modify" action="/products/edit/<%= product.id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
+                <div id="divProductName" class="form_divs">
                     <label for="name" class="form-label">Nombre:</label>   
-                    <input class="input_slot" type="text" name="name" id="name" value="<%= product.name %>" required> 
+                    <input class="input_slot" type="text" name="name" id="name" value="<%= product.name %>">
+                    <div id="errorProductName" class="error-text"></div>
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="error-text error-back">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %> 
                 </div> 
-                <div class="form_divs">
+                <div id="divProductDescription" class="form_divs">
                     <label for="description" class="form-label">Descipción:</label>
                     <textarea class="text_area input_slot" name="description" id="description" class="form-input"><%= product.description %></textarea>
+                    <div id="errorProductDescription" class="error-text"></div>
+                    <% if (locals.errors && errors.description) { %>
+                        <div class="error-text error-back">
+                            <%= errors.description.msg %>
+                        </div>
+                    <% } %>
                 </div>
-
                 <div >
                     <label for="image" class="form-label">Fotografia:</label>
-                    <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
+                    <input class="image-reg" type="file" name="image" id="imageEdit" multiple="multiple">
+                    <% if (locals.errors && errors.image) { %>
+                        <div class="error-text error-back">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="form_divs double_slot">
                     <div class="div-select">
@@ -31,8 +47,7 @@
                         <select class="form-select" name="category" id="category" class="form-input">
                             <option value="<%= product.category_id %>"><%= product.Category.category %></option>
                             <option value="<%= product.category_id === 1 ? 2 : 1 %>"><%= product.Category.category === 'Nuevo' ? 'Retro' : 'Nuevo' %></option>
-                            <!-- <option value="1">Nuevo</option>
-                            <option value="2">Retro</option> -->
+                            <div id="errorProductCategory" class="error-text"></div>
                         </select>
                     </div>
                     <div class="form-image">
@@ -53,15 +68,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="double_slot form_divs">                        
-                    <div class="slot price_slot">
+                <div class="form_divs double_slot">                        
+                    <div id="divProductStock" class="form_divs div-select">
                         <label for="stock" class="form-label">Stock:</label>   
-                        <input class="input_slot" type="text" name="stock" id="stock" value="<%= product.stock %>" required> 
-                    </div> 
-                    
-                    <div class="slot price_slot">
+                        <input class="input_slot" type="text" name="stock" id="stock" value="<%= product.stock %>">
+                        <div id="errorProductStock" class="error-text"></div>
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="error-text error-back">
+                                <%= errors.stock.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div id="divProductPrice" class="slot price_slot">
                         <label for="price" class="form-label">Precio:</label>
-                        <input class="input_slot" type="text" name="price" id="price" value="<%= product.price %>" required>
+                        <input class="input_slot" type="text" name="price" id="price" value="<%= product.price %>">
+                        <div id="errorProductPrice" class="error-text"></div>
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="error-text">
+                                <%= errors.price.msg %>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
                 <div class="buttons buttons_edit">
@@ -77,5 +103,7 @@
     </section>  
 </main>
 <%- include ('./partials/footer') %>
+<script src="/js/functions.js"></script>
+<script src="/js/edit.js"></script>
 </body>
 </html>

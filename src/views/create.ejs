@@ -31,16 +31,16 @@
                         </div>
                     <% } %>
                 </div>
-                <div id="divProductStock" class="form_divs">
-                    <label for="stock" class="form-label">Stock:</label>   
-                    <input class="input_slot" type="text" name="stock" id="stock" value="<%=  locals.oldData ? oldData.stock : null%>">
-                    <div id="errorProductStock" class="error-text"></div>
-                    <% if (locals.errors && errors.stock) { %>
+                <div>
+                    <label for="image" class="form-label">Fotografia:</label>
+                    <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
+                    <div id="errorProductImage" class="error-text"></div>
+                    <% if (locals.errors && errors.image) { %>
                         <div class="error-text error-back">
-                            <%= errors.stock.msg %>
+                            <%= errors.image.msg %>
                         </div>
                     <% } %>
-                </div> 
+                </div>
                 <div class="form_divs double_slot">
                     <div class="div-select">
                         <label for="category" class="form-label">Categoría:</label>
@@ -78,17 +78,17 @@
                         <% } %>
                     </div>
                 </div>
-                <div class="double_slot form_divs">                  
-                    <div class="form-image">
-                        <label for="image" class="form-label">Fotografia:</label>
-                        <input class="image-reg" type="file" name="image" id="image" multiple="multiple">
-                        <div id="errorProductImage" class="error-text"></div>
-                        <% if (locals.errors && errors.image) { %>
-                            <div class="error-text">
-                                <%= errors.image.msg %>
+                <div class="form_divs double_slot">                  
+                    <div id="divProductStock" class="form_divs div-select">
+                        <label for="stock" class="form-label">Stock:</label>   
+                        <input class="input_slot" type="text" name="stock" id="stock" value="<%=  locals.oldData ? oldData.stock : null%>">
+                        <div id="errorProductStock" class="error-text"></div>
+                        <% if (locals.errors && errors.stock) { %>
+                            <div class="error-text error-back">
+                                <%= errors.stock.msg %>
                             </div>
                         <% } %>
-                    </div>
+                    </div> 
                     <div id="divProductPrice" class="slot price_slot">
                         <label for="price" class="form-label">Precio:</label>
                         <input class="input_slot" type="text" name="price" id="price" value="<%=  locals.oldData ? oldData.price : null%>">
