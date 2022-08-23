@@ -35,6 +35,7 @@ const apiProductsRouter = require('./routers/api/productAPIRouter');
 const apiUsersRouter = require('./routers/api/userAPIRouter');
 
 app.use('/api/products', apiProductsRouter);
+app.use('/api/users', apiUsersRouter);
 
 
 //Ejecuto el llamado a mis rutas

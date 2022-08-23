@@ -17,8 +17,8 @@ const productController = {
 			return activos
 		  })
       .then((products) => {
-        res.send (products)
-        /* res.render ('products', {products}) */
+        /* res.send (products) */
+        res.render ('products', {products})
       })
       .catch( error =>
         res.send(error)
