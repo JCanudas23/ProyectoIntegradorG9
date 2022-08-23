@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const validationsCreate = require('../middlewares/validateCreateProductMiddleware');
-const validationsEdit = require('../middlewares/validateEditProductMiddleware');
+const multer = require('multer'); // Llamado a multer para perimitir al usuario subir archivos (images)
+const validationsCreate = require('../middlewares/validateCreateProductMiddleware'); // Validaciónes en la ruta de creación de producto
+const validationsEdit = require('../middlewares/validateEditProductMiddleware'); // Validaciónes en la ruta de edición de producto
 const path = require('path');
-const authMiddleware = require('../middlewares/authMiddleware');
-const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware'); // Ruta usuario NO Logueado
+const guestMiddleware = require('../middlewares/guestMiddleware'); // Ruta usuario Logueado con ROL de cliente
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
