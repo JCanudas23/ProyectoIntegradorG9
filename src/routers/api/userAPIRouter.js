@@ -5,11 +5,13 @@ const router = express.Router();
 
 
 //Rutas
-//Listado de productos
+//Listado de Usuarios
 router.get('/', usersAPIController.usersInDb);
-//Detalle de un producto
+//Detalle de un Usuario
 router.get('/:id', usersAPIController.detail);
-//Crear Producto
-router.post('/create', usersAPIController.register);
+//Crear Usuario
+router.post('/register', usersAPIController.register);
+//Editar Producto
+router.patch('/edit/:id', usersAPIController.update);
 
 module.exports = router;

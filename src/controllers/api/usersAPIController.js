@@ -5,6 +5,7 @@ const bcryptjs = require("bcryptjs");
 const { Op } = require("sequelize");
 
 const usersAPIController = {
+  
   usersInDb: (req, res) => {
     db.User.findAll({ where: { deleted: 0 } })
       .then((users) => {
@@ -97,9 +98,9 @@ const usersAPIController = {
             if (confirm) {
               result = {
                 meta: {
-                  status: 200,
+                  status: 201,
                   total: confirm.length,
-                  url: "api/users/create",
+                  url: "api/users/register",
                 },
                 data: "Usuario registrado satisfactoriamente",
               };
@@ -110,6 +111,38 @@ const usersAPIController = {
       }
     });
   },
+
+  //Editamos la informacion del usuario
+  update : (req,res) => {
+    let userId = req.params.id;
+    db.User.update({
+      name: req.body.name,
+      user_name: req.body.user_name,
+      email: req.body.email,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      avatar: req.file ? req.file.filename : "user-1657151406387.png",
+      deleted: 0,
+      role_id: 2,
+    },
+    {
+        where: {id: userId}
+    })
+    .then((confirm) => {
+      let result;
+      if (confirm) {
+        result = {
+          meta: {
+            status: 200,
+            url: "api/users/edit/" + userId,
+          },
+          data: "Usuario actualizado satisfactoriamente",
+        };
+        res.status(200).send(result);
+      }
+    })
+    .catch((error) => res.status(409).send(error));
+
+  }
 };
 
 module.exports = usersAPIController;
