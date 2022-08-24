@@ -9,5 +9,7 @@ const router = express.Router();
 router.get('/', usersAPIController.usersInDb);
 //Detalle de un producto
 router.get('/:id', usersAPIController.detail);
+//Crear Producto
+router.post('/create', usersAPIController.register);
 
 module.exports = router;
