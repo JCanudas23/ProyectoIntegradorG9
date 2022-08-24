@@ -13,5 +13,7 @@ router.get('/:id', usersAPIController.detail);
 router.post('/register', usersAPIController.register);
 //Editar Producto
 router.patch('/edit/:id', usersAPIController.update);
+//Editar Producto
+router.delete('/destroy/:id', usersAPIController.destroy);
 
 module.exports = router;

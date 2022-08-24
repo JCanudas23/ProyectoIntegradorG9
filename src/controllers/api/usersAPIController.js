@@ -5,7 +5,7 @@ const bcryptjs = require("bcryptjs");
 const { Op } = require("sequelize");
 
 const usersAPIController = {
-  
+
   usersInDb: (req, res) => {
     db.User.findAll({ where: { deleted: 0 } })
       .then((users) => {
@@ -93,7 +93,7 @@ const usersAPIController = {
           deleted: 0,
           role_id: 2,
         })
-          .then((confirm) => {
+        .then((confirm) => {
             let result;
             if (confirm) {
               result = {
@@ -141,8 +141,23 @@ const usersAPIController = {
       }
     })
     .catch((error) => res.status(409).send(error));
-
-  }
+  },
+  
+  destroy: (req,res) => {
+    let userId = req.params.id;
+    db.User.destroy({where: {id: userId}, force: true}) // force: true es para asegurar que se ejecute la acción
+    .then( result => {
+      let resultado ={
+          meta: {
+              status: 200,
+              url: 'api/users/destroy/:id'
+          },
+          data:"Usuario Eliminado"
+      }
+      res.status(200).send(resultado);
+    })    
+    .catch((error) => res.status(409).send(error));
+}
 };
 
 module.exports = usersAPIController;
