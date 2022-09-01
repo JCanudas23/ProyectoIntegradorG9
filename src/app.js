@@ -5,8 +5,11 @@ const methodOverride = require("method-override");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 const adminLoggedMiddleware = require("./middlewares/adminLoggedMiddleware");
 const cookies = require('cookie-parser');
+const cors = require('cors');
 
 const app = express();
+
+app.use (cors());
 
 app.use(session({
     secret:"Esto nadie lo sabe Lacez Society",

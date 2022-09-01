@@ -8,30 +8,31 @@ const productsAPIController = {
     let products = db.Product.findAll({where: {deleted:0}});
     let categories = db.Category.findAll({});
     Promise.all([products, categories])
-      .then((products) => {
-        let dataProducts = products[0].map((product) => {
+      .then(([products,categories]) => {
+        let dataProducts = products.map((product) => {
           let productInfo = {
             id: product.dataValues.id,
             name: product.dataValues.name,
             description: product.dataValues.description,
+            category: product.dataValues.category_id,
             dbRelations: ["category_id", "Image", "Product_Size"],
             detailURL:
               "http://localhost:3030/api/products/" + product.dataValues.id,
           };
           return productInfo;
         });
-        let newProducts = products[0].filter(
+        let newProducts = products.filter(
           (product) => product.dataValues.category_id === 1
         );
-        let retroProducts = products[0].filter(
+        let retroProducts = products.filter(
           (product) => product.dataValues.category_id === 2
         );
 
         let respuesta = {
           meta: {
             status: 200,
-            total: products[0].length,
-            categoriesCount: products[1].length,
+            total: products.length,
+            categoriesCount: categories.length,
             countByCategry: {
               new: newProducts.length,
               retro: retroProducts.length,
