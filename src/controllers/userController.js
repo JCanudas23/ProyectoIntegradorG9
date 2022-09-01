@@ -16,7 +16,6 @@ const userController = {
     },
 
     loginProcess: (req,res) => {
-        
         const resultValidation = validationResult(req,res);
         
         db.User.findAll({
@@ -42,6 +41,11 @@ const userController = {
                 if (passwordOk) {
                     delete userToLogin.dataValues.password;
                     req.session.userLogged = userToLogin;
+
+                    if (req.body.remember_user){
+                        res.cookie('userEmail',req.body.email, {maxAge: 1000 * 60})
+                    }
+
                     res.redirect("/user/profile")
                 }
                 res.render('login', {
@@ -59,6 +63,7 @@ const userController = {
     },
 
     profile: (req,res) => {
+        console.log(req.cookies.userEmail);
         return res.render ("profile" , {
             user: req.session.userLogged
         });
