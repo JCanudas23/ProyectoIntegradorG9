@@ -177,6 +177,7 @@ const productController = {
       let sizes = productSizes.map (size => {
         return {product_id : req.params.id,  size_id : size}
       })
+      console.log("----------------------->", sizes);
       return db.Product_Size.bulkCreate(
         sizes,
         {

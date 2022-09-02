@@ -15,6 +15,7 @@ const productsAPIController = {
             name: product.dataValues.name,
             description: product.dataValues.description,
             category: product.dataValues.category_id,
+            precio: product.dataValues.price,
             dbRelations: ["category_id", "Image", "Product_Size"],
             detailURL:
               "http://localhost:3030/api/products/" + product.dataValues.id,
