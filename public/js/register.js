@@ -16,14 +16,18 @@ window.onload = function () {
   let divUserCPassword = document.querySelector("#divUserCPassword");
   let errorUserCPassword = document.querySelector("#errorUserCPassword");
   let errorBack = document.querySelectorAll(".error-back");
-
+  
+  let emailsUsers = [];
   function usersEmail(){
     fetch('http://localhost:3030/api/users')
     .then(response => response.json())
     .then(data => {
-      return data.users.forEach( user => user.email)
+      data.users.forEach( user => emailsUsers.push(user.email))
+      return emailsUsers;
     });
   }
+
+  usersEmail();
 
   let nameEvents = function (event) {
     // Activamos Eventos en conjunto
@@ -70,7 +74,7 @@ window.onload = function () {
       errorUserEmail.innerHTML += "Debes ingresar un E-mail valido";
       functions.addRemoveClass(userEmail, "is-invalid", "is-valid");
       functions.addRemoveClass(divUserEmail, "invalid");
-    } else if (usersEmail() === userEmail.valie ) {
+    } else if (emailsUsers.includes(userEmail.value)) {
       errorUserEmail.innerHTML += "Email ya se encuentra registrado";
       functions.addRemoveClass(userEmail, "is-invalid", "is-valid");
       functions.addRemoveClass(divUserEmail, "invalid");
