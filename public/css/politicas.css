@@ -1,0 +1,30 @@
+.politicas__contenedor {
+    width: 100%;
+}
+
+.politicas__titulo {
+    font-size: 20px;
+    color: var(--gris-oscuro);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.politicas__texto {
+    font-size: 16px;
+    color: var(--gris-oscuro);
+    font-weight: 300;
+}
+
+@media (min-width: 426px) {
+    .politicas__contenedor {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .politicas__contenedor {
+        width: 60%;
+        margin: auto;
+    }
+}

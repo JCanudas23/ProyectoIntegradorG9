@@ -9,6 +9,7 @@
 .newsletter__tittle {
     font-size: 40px;
     font-weight: 900;
+    color: var(--gris-oscuro);
 }
 
 .newsletter__tittle-yellow {
@@ -16,6 +17,7 @@
 }
 
 .newsletter__text {
+    color: var(--gris-oscuro);
     text-align: center;
     font-size: 16px;
     font-weight: 400;
@@ -66,6 +68,14 @@
     font-weight: 300;
     text-align: center;
     width: 100%;
+}
+
+.popup {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
 }
 
 @media (min-width: 426px) {

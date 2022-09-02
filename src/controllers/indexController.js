@@ -30,7 +30,11 @@ const indexController = {
 			.catch( error =>
 			  res.send(error)
 			)
-    }
+    },
+
+	politicas : (req,res) => {
+		return res.render ('politicas');
+	}
 }
 
 module.exports =indexController;
