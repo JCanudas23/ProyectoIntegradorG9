@@ -34,6 +34,10 @@ const indexController = {
 
 	politicas : (req,res) => {
 		return res.render ('politicas');
+	},
+
+	condiciones : (req,res) => {
+		return res.render ('condicionesCompra');
 	}
 }
 

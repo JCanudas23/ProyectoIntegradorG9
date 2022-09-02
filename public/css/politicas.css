@@ -10,6 +10,7 @@
 }
 
 .politicas__texto {
+    text-align: justify;
     font-size: 16px;
     color: var(--gris-oscuro);
     font-weight: 300;

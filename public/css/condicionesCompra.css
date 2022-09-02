@@ -1,0 +1,50 @@
+.condiciones__contenedor {
+    width: 100%;
+}
+
+.condiciones__titulo {
+    font-size: 20px;
+    color: var(--gris-oscuro);
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.slash-amarillo {
+    color: var(--amarillo);
+    font-weight: 900;
+}
+
+.condiciones__texto {
+    text-align: justify;
+    font-size: 16px;
+    color: var(--gris-oscuro);
+    font-weight: 300;
+}
+
+.link__politicas {
+    text-decoration: underline;
+}
+
+.condiciones__uso {
+    width: 80%;
+    margin-left: auto;
+}
+
+@media (min-width: 426px) {
+    .condiciones__contenedor {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 900px) {
+    .condiciones__contenedor {
+        width: 60%;
+        margin: auto;
+    }
+
+    .condiciones__uso {
+        width: 90%;
+        margin-left: auto;
+    }
+}
