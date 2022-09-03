@@ -1,16 +1,38 @@
-<section class="container newsletter">
-    <div id="popup" class="popup">
-        <div class="popup__container">
-            <p class="popup__text">Ha sido registrado a nuestro boletín electrónico</p>
-        </div>
+<section class="newsletter">
+  <div id="popup" class="popup">
+    <div class="popup__container">
+      <div>
+        <svg
+          class="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
+        >
+          <circle
+            class="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            class="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+        </svg>
+      </div>
+      <p class="popup__text">
+        Ha sido <strong>registrado</strong> a nuestro boletín electrónico
+      </p>
     </div>
+  </div>
   <h3 class="newsletter__tittle">
     NEWS<span class="newsletter__tittle-yellow">LETTER</span>
   </h3>
   <p class="newsletter__text">
     ¡Mantente actualizado sobre lanzamientos limitados, noticas y eventos!
   </p>
-  <form id="newsletterform" class="newsletter__form" action="/">
+  <form id="newsletterform" class="newsletter__form" action="">
     <input
       id="newsletterinput"
       class="newsletter__input"

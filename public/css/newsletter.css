@@ -1,117 +1,179 @@
 .newsletter {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin: 40px 0px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 40px 0px;
+  align-items: center;
 }
 
 .newsletter__tittle {
-    font-size: 40px;
-    font-weight: 900;
-    color: var(--gris-oscuro);
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--gris-oscuro);
 }
 
 .newsletter__tittle-yellow {
-    color: var(--amarillo);
+  color: var(--amarillo);
 }
 
 .newsletter__text {
-    color: var(--gris-oscuro);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 10px;
+  color: var(--gris-oscuro);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .newsletter__form {
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
 .newsletter__input {
-    width: 100%;
-    padding: 12px 15px;
-    color: var(--gris-oscuro);
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
+  width: 100%;
+  padding: 12px 15px;
+  color: var(--gris-oscuro);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .newsletter__desktop {
-    display: none;
+  display: none;
 }
 
 .newsletter__button {
-    padding: 8px 20px;
-    font-size: 14px;
-    font-weight: 400;
-    text-transform: uppercase;
-    background-color: var(--gris-claro);
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: var(--gris-claro);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .newsletter__remember {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 5px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
 }
 
 .newsletter__remember-input {
-    font-size: 12px;
-    font-weight: 300;
-    text-align: center;
-    width: 100%;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
 }
 
 .popup {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup__container {
     display: flex;
-    height: 100vh;
-    justify-content: center;
     align-items: center;
-    position: fixed;
+    flex-direction: column;
+    background-color: var(--gris-oscuro);
+    padding: 30px;
+    border: solid 2px var(--amarillo);
+}
+
+.popup__text {
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    width: 60%;
+}
+
+.popup__text strong {
+    color: var(--amarillo);
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: var(--amarillo);
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px var(--gris-oscuro);
+  animation: fill 0.4s ease-in-out 0.4s forwards,
+    scale 0.3s ease-in-out 0.9s both;
+}
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px var(--gris-claro);
+  }
 }
 
 @media (min-width: 426px) {
+  .newsletter__tittle {
+    font-size: 70px;
+  }
 
-    .newsletter__tittle {
-        font-size: 70px;
-    }
+  .newsletter__text {
+    font-size: 18px;
+  }
 
-    .newsletter__text {
-        font-size: 18px;
-    }
+  .newsletter__form {
+    width: 85%;
+  }
 
-    .newsletter__form {
-        width: 85%;
-    }
-
-    .newsletter__button {
-        position: absolute;
-        top:8%;
-        right: 0.6%;
-    }    
+  .newsletter__button {
+    position: absolute;
+    top: 8%;
+    right: 0.6%;
+  }
 }
 
-
 @media (min-width: 900px) {
+  .newsletter__form {
+    width: 65%;
+  }
 
-    .newsletter__form {
-        width: 65%;
-    }
+  .newsletter__mobile {
+    display: none;
+  }
 
-    .newsletter__mobile {
-        display: none;
-    }
-
-    .newsletter__desktop {
-        display: block;
-    }
-
+  .newsletter__desktop {
+    display: block;
+  }
 }
