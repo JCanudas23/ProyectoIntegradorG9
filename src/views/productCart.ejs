@@ -1,78 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include ('./partials/head') %> 
-<body>
+  <%- include ('./partials/head') %>
+  <body>
     <%- include ('./partials/header') %>
-    <main>
-        <div class="compras contenedor ">
-           <div class="bolsa"><h2>Bolsa de compras</h2></div>
-            <div>
-                <div class="lista-de-productos centrar">
-                    <div class="producto centrar flex-lineal">
-                        <div>
-                            <img class="imagen-cart" src=".\img\products\airmax-bw-marina.png" alt="zapatilla roja">
-                        </div>
-                        <div>
-                            <P class="precio-prod">$130</P>
-                            <h3 class="nombre-prod">Airmax</h3>
-                            <P class="color-prod">Bw marina</P>
-                            <p class="talla-prod">Talla 9,5</p>
-                        </div>
-                    </div>
-                <div class="lista-de-productos centrar">
-                    <div class="producto centrar flex-lineal">
-                        <div>
-                            <img class="imagen-cart" src=".\img\products\dunk-fossil-rose.png" alt="zapatilla gris">
-                        </div>
-                        <div>
-                            <P class="precio-prod">$110</P>
-                            <h3 class="nombre-prod">Dunk</h3>
-                            <P class="color-prod">Fossil rose</P>
-                            <p class="talla-prod">Talla 8,5</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="centrar info-total">
-                    <ul class="centrar list-info-total">
-                        <li class="centrar">
-                            <p class="precio-carro">Sub Total: $240</p>
-                        </li>
-                        <li class="centrar">
-                            <p class="envio-carro">Envio: $55.00</p>
-                        </li>
-                        <li class="centrar">
-                            <p class="total-carro">Total: $295</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="fin-compra centrar"><a class="centrar" href="/">Finalizar compra</a></div>
-            </div>
+    <main class="cart">
+            <h4 class="cart__title contenedor">
+                Bolsa de compras<span class="punto-amarillo">.</span>
+              </h4>
+              <% products.forEach(function(product){%>
+              <section class="cart__product contenedor">
+                  <a class="cart__product-img" href="/products/detail/<%= product.id %>">
+                      <img  src="/img/products/<%= product.Image[0].image %>" alt="product-Image"/>
+                  </a>
+                  <div class="cart__product-description">
+                      <p class="cart__product-price"><span class="currency-symbol"> $ </span><%= product.price %></p>
+                      <p class="cart__product-name"><%= product.name %></p>
+                      <p class="cart__product-size">Size 10</p>
+                  </div>
+              </section>
+        <% }) %>
+          <div class="cart__costs">
+            <ul class="cart__costs-list">
+              <li class="">Sub Total: $250</li>
+              <li class="">Envio: $55.00</li>
+              <li class="costs-list--total">Total: $305</li>
+            </ul>
+          </div>
+          <div class="cart__button">
+            <a href="/">Finalizar compra</a>
+          </div>
         </div>
+      </div>
+      <div class="contenedor">
+        <%- include ('./partials/newsletter') %>
+      </div>
     </main>
-<!--     <footer class="contenedor">
-        <div class="footer-flex">
-            <div class="redes">
-                <div>
-                    <h2 class="pie">Instagram</h2>                          
-                </div>
-                <div>
-                    <h2 class="pie">Facebook</h2>
-                </div>
-                <div>
-                    <h2 class="pie">Youtube</h2>                    
-                </div>
-            </div>
-            <div class="politics">
-                <p>Política de privacidad</p>
-                <p>Condición de compra</p>
-            </div>
-        </div> 
-
-        <div>
-            <h4 class="copyright"><span>©2022 Lacez Society.</span> Todos los derechos reservados</h4>
-        </div>                           
-    </footer> -->
     <%- include ('./partials/footer') %>
-</body>
-
+  </body>
 </html>

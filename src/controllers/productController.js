@@ -40,7 +40,22 @@ const productController = {
     },
 
     productCart : (req,res) => {
-        return res.render ('productCart');
+      db.Product.findAll({
+        where : {id: [1,2]},
+        include: ['Category','Image','Product_Size'],
+      })
+      .then ((products)=> {
+        const activos = products.filter(function(product){
+          return product.deleted == 0;
+        })
+        return activos
+        })
+        .then((products) => {
+          res.render ('productCart', {products})
+        })
+        .catch( error =>
+          res.send(error)
+        )
     },
 
     createProduct : (req,res) => {
