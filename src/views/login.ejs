@@ -23,7 +23,10 @@
                             <% } %>
                         </div>
                         <div id="divPassword" class="div-inputs">
-                            <input class="espacio-reg" type="password" name="password" id="password" placeholder="Contraseña">
+                            <div class="password__contains">
+                                <input class="espacio-reg" type="password" name="password" id="password" placeholder="Contraseña">
+                                <div id="passwordEye" class="password__eye"><i class="fa-solid fa-eye"></i></div>
+                            </div>
                             <div id="errorPassword" class="error-text"></div>
                             <% if (locals.errors && errors.password) { %>
                                 <div class="error-text error-back">

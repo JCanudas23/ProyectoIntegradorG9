@@ -16,6 +16,7 @@ window.onload = function () {
   let divUserCPassword = document.querySelector("#divUserCPassword");
   let errorUserCPassword = document.querySelector("#errorUserCPassword");
   let errorBack = document.querySelectorAll(".error-back");
+  let passwordEye =document.querySelector("#passwordEye");
   
   let emailsUsers = [];
   function usersEmail(){
@@ -28,6 +29,13 @@ window.onload = function () {
   }
 
   usersEmail();
+
+  functions.seePassword({
+    queryUno: passwordEye,
+    queryDos: userPassword,
+    queryTres: userCPassword,
+    className: "eye",
+  });
 
   let nameEvents = function (event) {
     // Activamos Eventos en conjunto

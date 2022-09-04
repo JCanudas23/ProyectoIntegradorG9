@@ -47,9 +47,12 @@
                         <% } %>
                     </div>
                     <div id="divUserPassword" class="div-inputs">
+                    <div class="password__contains">
                         <input type="password" name="password" id="password" placeholder="Contraseña" class="espacio-reg
                         <%- locals.errors && errors.password ? 'is-invalid' : null %>"
                         value="">
+                        <div id="passwordEye" class="password__eye"><i class="fa-solid fa-eye"></i></div>
+                    </div>
                         <div id="errorUserPassword" class="error-text"></div>
                         <% if (locals.errors && errors.password) { %>
                             <div class="error-text error-back">

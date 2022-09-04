@@ -7,6 +7,13 @@ window.onload = function () {
   let errorEmail = document.querySelector("#errorEmail");
   let errorPassword = document.querySelector("#errorPassword");
   let errorBack = document.querySelectorAll(".error-back");
+  let passwordEye =document.querySelector("#passwordEye");
+
+  functions.seePassword({
+    queryUno: passwordEye,
+    queryDos: password,
+    className: "eye",
+  });
 
   let emailEvents = function (event) {
     // Activamos Eventos en conjunto

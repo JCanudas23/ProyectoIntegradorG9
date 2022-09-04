@@ -57,6 +57,21 @@
     border-style: none;
 }
 
+.password__contains {
+    position: relative;
+}
+
+.password__eye {
+    position: absolute;
+    top: 33%;
+    right: 15%;
+    color: var(--gris-claro);
+}
+
+.eye {
+    color: var(--gris-oscuro);
+}
+
 .error-text {
     font-size: 12px;
     color: red;
