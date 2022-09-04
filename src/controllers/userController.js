@@ -36,14 +36,14 @@ const userController = {
                         }
                     }
                 })
-            }else if (result.length > 0 ){
+            } else if (result.length > 0 ){
                 let passwordOk = bcryptjs.compareSync(req.body.password,userToLogin.password)
                 if (passwordOk) {
                     delete userToLogin.dataValues.password;
                     req.session.userLogged = userToLogin;
 
                     if (req.body.remember_user){
-                        res.cookie('userEmail',req.body.email, {maxAge: 1000 * 60})
+                        res.cookie('userEmail',req.body.email, {maxAge: 1000 * 1000})
                     }
 
                     res.redirect("/user/profile")
@@ -64,6 +64,7 @@ const userController = {
 
     profile: (req,res) => {
         console.log(req.cookies.userEmail);
+        console.log(req.session.userLogged);
         return res.render ("profile" , {
             user: req.session.userLogged
         });
@@ -159,7 +160,39 @@ const userController = {
         .catch( error =>
             res.send(error)
           )
-    } 
+    },
+
+    modifyUser : (req,res) => {
+        let id = req.session.userLogged.id;
+        db.User.findByPk (id)
+          .then((user) => {
+            res.render ('editP', {user})
+          })
+          .catch( error =>
+            res.send(error)
+          )
+    },
+
+    updateUser: (req, res) => {
+        let idUser = req.session.userLogged.id;
+        db.User.update(
+          {
+            name: req.body.name,
+          },
+          {
+            where: { id: idUser},
+          }
+        )
+        .then (()=> {
+            db.User.findByPk(idUser)
+            .then((data)=>{
+                let userToLogin = data;
+                delete userToLogin.dataValues.password;
+                req.session.userLogged = userToLogin;
+                res.redirect("/user/profile")
+            })
+        })
+    }
 }
 
 module.exports = userController;
