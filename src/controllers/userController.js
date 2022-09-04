@@ -64,7 +64,6 @@ const userController = {
 
     profile: (req,res) => {
         console.log(req.cookies.userEmail);
-        console.log(req.session.userLogged);
         return res.render ("profile" , {
             user: req.session.userLogged
         });
@@ -178,6 +177,10 @@ const userController = {
         db.User.update(
           {
             name: req.body.name,
+            user_name: req.body.user_name,
+            email: req.body.email,
+            password: req.body.password ? bcryptjs.hashSync(req.body.password, 10): req.session.userLogged.password ,
+            avatar: req.file ? req.file.filename : req.session.userLogged.avatar,
           },
           {
             where: { id: idUser},

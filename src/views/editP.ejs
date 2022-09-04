@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include ('./partials/head') %> 
-<body>
+  <%- include ('./partials/head') %>
+  <body>
     <%- include ('./partials/header') %>
     <main class="contenedor">
-        <section class="modify_section">
-            <div class="product_info">
-                <form action="/user/editP?_method=PATCH" method="POST">
-                    <label for="name">Nombre</label>
-                    <input type="text" value="" name="name">
-                    <button type="submit">enviar</button>
-                </form>
+      <section class="container-form">
+        <div class="edit__div-tittle">
+          <h4 class="edit__title">
+            Formulario de edición perfil<span class="punto-amarillo">.</span>
+          </h4>
+        </div>
+        <form class="form_modify" action="/user/editP?_method=PATCH" method="POST" enctype="multipart/form-data">
+          <div id="" class="form_divs">
+            <label class="form-label" for="name">Nombre y apellido:</label>
+            <input class="input_slot" type="text" value="<%= user.name %>" name="name" id="name"/>
+          </div>
+          <div id="" class="form_divs">
+            <label class="form-label" for="user_name">Nombre de Usuari@:</label>
+            <input class="input_slot" type="text" value="<%= user.user_name %>" name="user_name" id="user_name"/>
+          </div>
+          <div id="" class="form_divs">
+            <label class="form-label" for="email">E-mail:</label>
+            <input class="input_slot" type="text" value="<%= user.email %>" name="email" id="email"/>
+          </div>
+          <div id="" class="form_divs">
+            <label class="form-label" for="password">Contraseña:</label>
+            <input class="input_slot" type="password" value="" name="password" id="password" placeholder="Contraseña"/>
+          </div>
+          <div id="" class="form_divs">
+            <label for="avatar" class="form-label">Avatar:</label>
+            <input type="file" name="avatar" id="avatar" class="image-reg">
+          </div>
+          <div class="buttons" >
+            <div>
+                <button class="default_button button-login" type="submit" id="" class="espacio-login">Enviar</button>
             </div>
-        </section>  
-    </main>
+                <a class="buttons default_button reset_button" href="/user/profile">Regresar</a>
+            </div>
+        </form>
+      </section>
     </main>
     <%- include ('./partials/footer') %>
-</body>
+  </body>
 </html>

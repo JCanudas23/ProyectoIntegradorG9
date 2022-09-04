@@ -16,7 +16,7 @@ router.get ('/profile/', authMiddleware ,userController.profile);
 router.get ('/logout/',userController.logout);
 
 router.get('/editP', authMiddleware, userController.modifyUser);
-router.patch('/editP', userController.updateUser);
+router.patch('/editP',upload.single('avatar'), userController.updateUser);
 
 router.get('/register', adminMiddleware, guestMiddleware ,userController.register);
 router.post('/register',upload.single('avatar'), validations , userController.userStore);
