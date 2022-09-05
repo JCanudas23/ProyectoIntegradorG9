@@ -103,6 +103,11 @@
         width: 30%;
     }
 
+    .cart__title {
+        margin-left: 51%;
+    }
+    
+
 
     .cart__costs {
         width: 70%;

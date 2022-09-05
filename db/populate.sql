@@ -66,8 +66,9 @@ INSERT INTO lacezdb.images (id, image , product_id) VALUES
 
 -- users --
 INSERT INTO lacezdb.users (id,name,user_name,email,password,avatar,deleted,role_id) VALUES
-(1, "Micky Papa", "MrCrayola" ,"mkypapa.94@gmail.com", "$2a$10$gpCI04YCqKeB0MLIdUBknOwzKsjcQoXk5O/bSfqo14jDR8sOHlvpK", "user-1657151406387.png", 0, 2),
-(2, "Administrador", "Admin" ,"admin_1@gmail.com", "$2a$10$jWmmxWdcCukqfF1wX5ZvLe2lnNZkxe967C3DnwtRstPql/BxdVlgi", "user-1657151406387.png", 0, 1);
+(1, "Micky Papa", "Mky Papa" ,"mkypapa.94@gmail.com", "$2a$10$gpCI04YCqKeB0MLIdUBknOwzKsjcQoXk5O/bSfqo14jDR8sOHlvpK", "micky_papa-7168.jpg", 0, 2),
+(2, "Dennis Busenitz", "Busenitz81" ,"busenitz81@gmail.com", "$2a$10$bbj6DR7ujvyKrKAF17mBy.97pQ5x6FtYZVIjdWFz.oEa.gdOmO6tq", "user-1662400426264.jpg", 0, 2),
+(3, "Mr.Lacez", "Mr. Lacez" ,"admin_lacez@gmail.com", "$2a$10$jWmmxWdcCukqfF1wX5ZvLe2lnNZkxe967C3DnwtRstPql/BxdVlgi", "logo.png", 0, 1);
 
 -- product_size --
 INSERT INTO lacezdb.product_size (id,product_id,size_id) VALUES
