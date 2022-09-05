@@ -24,11 +24,19 @@
                             </p>
                             <div>
                                 <p class="size-us">SIZE US:</p>
-                                 <ul class="product__detail-size">
+                                <div class="size_checkbox">
+                                    <% for (let i = 0; i < product.Product_Size.length; i++){ %>
+                                    <div class="size__container size__detail-container">
+                                        <input class="size__detail" type="radio" id="size" name="size" value="<%= product.Product_Size[i].size %>">
+                                        <p class="size__us-number"><%= product.Product_Size[i].size %></p>
+                                    </div>
+                                    <% } %>
+                                </div>
+<!--                                  <ul class="product__detail-size">
                                     <% for (let i = 0; i < product.Product_Size.length; i++){ %>
                                         <li id="size" class="detail-size"><%= product.Product_Size[i].size %></li>
                                     <% } %>
-                                </ul>
+                                </ul> -->
                             </div>
                         <% if (locals.isLogged == 'admin') {%>        
                             <button type="submit" class="boton-enviar admin_buttons action-button">    

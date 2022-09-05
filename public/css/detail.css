@@ -79,6 +79,20 @@
     font-weight: 700;
 }
 
+.size__container {
+    position: relative;
+}
+
+.size__us-number {
+    position: absolute;
+    top: 18%;
+    right: 45%;
+}
+
+.size__detail-container {
+    margin: 0px 5px;
+}
+
 .detail-size {
     padding: 5px 20px;
     border: solid 1px var(--gris-claro);
