@@ -45,6 +45,14 @@ select {
     width: 100%;
 }
 
+.admin_buttons {
+    color: var(--gris-oscuro);
+    background-color: #FFD600;
+    padding: 15px 30px;
+    border-style: none;
+    cursor: pointer;
+}
+
 .div-checkbox {
     display: flex;
     justify-content: space-between;

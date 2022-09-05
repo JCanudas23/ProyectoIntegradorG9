@@ -31,12 +31,12 @@
                                 </ul>
                             </div>
                         <% if (locals.isLogged == 'admin') {%>        
-                            <button type="submit" class="default_button">    
-                                <a class="default_button" href="/products/edit/<%= product.id %>" class="action-button edit">Editar producto</a>
+                            <button type="submit" class="boton-enviar admin_buttons action-button">    
+                                <a class="admin_buttons" href="/products/edit/<%= product.id %>" class="action-button edit">Editar producto</a>
                             </button>
                             
                             <form action="/products/delete/<%= product.id %>?_method=PATCH" method="POST">
-                                <button type="submit" class="boton-enviar default_button action-button delete">Eliminar Producto</button>	
+                                <button type="submit" class="boton-enviar admin_buttons action-button delete">Eliminar Producto</button>	
                             </form>
                         <% } %>
                         <div>
