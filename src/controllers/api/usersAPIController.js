@@ -15,9 +15,7 @@ const usersAPIController = {
         //Eliminamos información sensible de cada usuario
         dataUsers.forEach((user) => {
           delete user.password;
-          delete user.avatar;
           delete user.deleted;
-          delete user.role_id;
           user.detailURL = "http://localhost:3030/api/users/" + user.id;
         });
 
