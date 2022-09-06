@@ -26,7 +26,7 @@
                                 <p class="size-us">SIZE US:</p>
                                 <div class="size_checkbox">
                                     <% for (let i = 0; i < product.Product_Size.length; i++){ %>
-                                    <div class="size__container size__detail-container">
+                                    <div class="size__detail-container">
                                         <input class="size__detail" type="radio" id="size" name="size" value="<%= product.Product_Size[i].size %>">
                                         <p class="size__us-number"><%= product.Product_Size[i].size %></p>
                                     </div>
