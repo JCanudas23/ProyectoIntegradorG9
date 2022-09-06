@@ -5,7 +5,7 @@ const { Op } = require("sequelize");
 
 const productsAPIController = {
   productsInDb: (req, res) => {
-    let products = db.Product.findAll({where: {deleted:0}});
+    let products = db.Product.findAll({include: ["Image"], where: {deleted:0}});
     let categories = db.Category.findAll({});
     Promise.all([products, categories])
       .then(([products,categories]) => {
@@ -16,6 +16,7 @@ const productsAPIController = {
             description: product.dataValues.description,
             category: product.dataValues.category_id,
             precio: product.dataValues.price,
+            image: product.dataValues.Image[0].dataValues.image,
             dbRelations: ["category_id", "Image", "Product_Size"],
             detailURL:
               "http://localhost:3030/api/products/" + product.dataValues.id,
